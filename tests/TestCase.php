@@ -2,9 +2,9 @@
 
 namespace Codedor\FilamentMailTemplates\Tests;
 
+use Codedor\FilamentMailTemplates\Providers\FilamentMailTemplatesServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Codedor\FilamentMailTemplates\Providers\FilamentMailTemplatesServiceProvider;
 
 class TestCase extends Orchestra
 {
