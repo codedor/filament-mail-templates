@@ -2,8 +2,6 @@
 
 namespace Codedor\FilamentMailTemplates\Forms\Components;
 
-use Closure;
-use Codedor\FilamentMailTemplates\Models\MailTemplate;
 use Filament\Forms\Components\Field;
 use Filament\Notifications\Notification;
 use Illuminate\Support\Str;
@@ -35,12 +33,12 @@ class MailVariablesInput extends Field
                         return;
                     }
 
-                Notification::make()
-                    ->title(__('filament-mail-templates::builder.copied :key to clipboard', [
-                        'key' => $key,
-                    ]))
-                    ->success()
-                    ->send();
+                    Notification::make()
+                        ->title(__('filament-mail-templates::builder.copied :key to clipboard', [
+                            'key' => $key,
+                        ]))
+                        ->success()
+                        ->send();
                 },
             ],
         ]);

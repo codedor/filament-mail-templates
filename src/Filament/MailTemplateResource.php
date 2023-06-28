@@ -3,7 +3,6 @@
 namespace Codedor\FilamentMailTemplates\Filament;
 
 use Closure;
-use Codedor\FilamentMailTemplates\Facades\MailTemplateCollection;
 use Codedor\FilamentMailTemplates\Filament\MailTemplateResource\Pages;
 use Codedor\FilamentMailTemplates\Forms\Components\MailVariablesInput;
 use Codedor\FilamentMailTemplates\Models\MailTemplate;
@@ -11,9 +10,6 @@ use Codedor\TranslatableTabs\Forms\TranslatableTabs;
 use Codedor\TranslatableTabs\Tables\LocalesColumn;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Placeholder;
-use Filament\Forms\Components\Section;
-use Filament\Forms\Components\Select;
-use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Resources\Form;
@@ -23,7 +19,6 @@ use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use FilamentTiptapEditor\TiptapEditor;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Str;
 
 class MailTemplateResource extends Resource
 {
