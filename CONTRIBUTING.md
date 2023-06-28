@@ -7,7 +7,7 @@ We love pull requests from everyone. By participating in this project, you agree
 [Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo), then clone the repo:
 
 ```bash
-git clone git@github.com:your-username/:package_slug.git
+git clone git@github.com:your-username/filament-mail-templates.git
 ```
 
 Install the composer packages:

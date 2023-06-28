@@ -1,4 +1,4 @@
-# :package_description
+# A package to create customizable mail templates in Filament
 
 ## Introduction
 
