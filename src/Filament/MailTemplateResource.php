@@ -9,7 +9,9 @@ use Codedor\FilamentMailTemplates\Forms\Components\MailVariablesInput;
 use Codedor\FilamentMailTemplates\Models\MailTemplate;
 use Codedor\TranslatableTabs\Forms\TranslatableTabs;
 use Codedor\TranslatableTabs\Tables\LocalesColumn;
+use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Placeholder;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -44,16 +46,21 @@ class MailTemplateResource extends Resource
                         ->content(fn (Model $record) => $record->description),
                 ])
                 ->translatableFields([
-                    TextInput::make('subject')
-                        ->required(fn (Closure $get) => $get('online')),
+                    Grid::make(3)->schema([
+                        TextInput::make('subject')
+                            ->required(fn (Closure $get) => $get('online'))
+                            ->columnSpan(['lg' => 3]),
 
-                    TiptapEditor::make('body')
-                        ->required(fn (Closure $get) => $get('online')),
+                        TiptapEditor::make('body')
+                            ->required(fn (Closure $get) => $get('online'))
+                            ->columnSpan(['lg' => 2]),
 
-                    MailVariablesInput::make('variables'),
+                        MailVariablesInput::make('variables'),
 
-                    Toggle::make('online')
-                        ->label('Online'),
+                        Toggle::make('online')
+                            ->columnSpan(['lg' => 3])
+                            ->label('Online'),
+                    ]),
                 ]),
         ]);
     }

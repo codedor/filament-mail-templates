@@ -11,6 +11,7 @@
     "require": {
         "php": "^8.2",
         "illuminate/contracts": "^10.0",
+        "awcodes/filament-tiptap-editor": "^2.6",
         "codedor/filament-link-picker": "dev-master",
         "codedor/filament-translatable-tabs": "dev-master",
         "codedor/laravel-locale-collection": "^0.0.3",
