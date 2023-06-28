@@ -11,7 +11,11 @@
     "require": {
         "php": "^8.2",
         "illuminate/contracts": "^10.0",
-        "spatie/laravel-package-tools": "^1.12"
+        "codedor/filament-link-picker": "dev-master",
+        "codedor/filament-translatable-tabs": "dev-master",
+        "codedor/laravel-locale-collection": "^0.0.3",
+        "spatie/laravel-package-tools": "^1.12",
+        "spatie/laravel-translatable": "^6.5"
     },
     "require-dev": {
         "laravel/pint": "^1.0",
