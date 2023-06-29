@@ -10,6 +10,8 @@ use Codedor\TranslatableTabs\Forms\TranslatableTabs;
 use Codedor\TranslatableTabs\Tables\LocalesColumn;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Placeholder;
+use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Resources\Form;
@@ -39,6 +41,23 @@ class MailTemplateResource extends Resource
 
                     Placeholder::make('description')
                         ->content(fn (Model $record) => $record->description),
+
+                    Repeater::make('to_email')
+                        ->label('Target e-mails')
+                        ->schema([
+                            Grid::make()->schema([
+                                TextInput::make('email')
+                                    ->required(),
+
+                                Select::make('type')
+                                    ->required()
+                                    ->options([
+                                        'to' => 'Normal',
+                                        'cc' => 'CC',
+                                        'bcc' => 'BCC',
+                                    ]),
+                            ]),
+                        ]),
                 ])
                 ->translatableFields([
                     Grid::make(3)->schema([

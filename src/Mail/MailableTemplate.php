@@ -32,8 +32,11 @@ class MailableTemplate extends Mailable
 
     public function envelope(): Envelope
     {
-        if ($this->to === []) {
-            $this->to($this->template->getToEmail());
+        // Add the to, cc, and bcc addresses, but only add to if it's not empty
+        foreach(['to', 'cc', 'bcc'] as $type) {
+            if ($type !== 'to' || $this->to === []) {
+                $this->{$type}($this->template->getEmailsFor($type));
+            }
         }
 
         return new Envelope(
@@ -60,10 +63,17 @@ class MailableTemplate extends Mailable
 
     public function send($mailer)
     {
+        $mail = parent::send($mailer);
+
+        // Do this AFTER sending the mail, so we have the correct envelope data
         try {
             MailHistory::create([
                 'mail_template_id' => $this->template->id,
-                'to_email' => $this->to[0]['address'] ?? null,
+                'mailed_resource_type' => $this->item->getMorphClass(),
+                'mailed_resource_id' => $this->item->getKey(),
+                'to_emails' => collect($this->to)->pluck('address'),
+                'cc_emails' => collect($this->cc)->pluck('address'),
+                'bcc_emails' => collect($this->bcc)->pluck('address'),
                 'from_email' => $this->envelope()->from->address,
                 'from_name' => $this->envelope()->from->name,
                 'subject' => $this->template->subject,
@@ -74,7 +84,7 @@ class MailableTemplate extends Mailable
             report($th);
         }
 
-        return parent::send($mailer);
+        return $mail;
     }
 
     public function parseVariables(string $content): string

@@ -5,6 +5,7 @@ namespace Codedor\FilamentMailTemplates\Models;
 use Codedor\FilamentMailTemplates\Facades\MailTemplateCollection;
 use Codedor\FilamentMailTemplates\RegisteringMailTemplate;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 use Spatie\Translatable\HasTranslations;
 
 class MailTemplate extends Model
@@ -41,10 +42,19 @@ class MailTemplate extends Model
         return $this->getMailTemplate()->getDescription();
     }
 
-    public function getToEmail(): string
+    public function getEmailsFor(string $type): Collection
     {
-        return $this->to_email
-            ?? config('filament-mail-templates.default.to_email')
-            ?? config('mail.from.address');
+        return $this->getAllEmails()
+            ->filter(fn ($email) => $email['type'] === $type)
+            ->pluck('email');
+    }
+
+    public function getAllEmails(): Collection
+    {
+        return Collection::wrap(
+            $this->to_email
+                ?? config('filament-mail-templates.default.to_email')
+                ?? config('mail.from.address')
+        );
     }
 }

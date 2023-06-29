@@ -14,7 +14,10 @@ return new class extends Migration
         Schema::create('mail_history', function (Blueprint $table) {
             $table->id();
             $table->foreignId('mail_template_id')->nullable()->constrained()->nullOnDelete();
-            $table->string('to_email');
+            $table->morphs('mailed_resource');
+            $table->json('to_emails');
+            $table->json('cc_emails');
+            $table->json('bcc_emails');
             $table->string('from_email');
             $table->string('from_name')->nullable();
             $table->string('subject');

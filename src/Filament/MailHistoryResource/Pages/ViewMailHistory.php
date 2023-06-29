@@ -4,9 +4,9 @@ namespace Codedor\FilamentMailTemplates\Filament\MailHistoryResource\Pages;
 
 use Codedor\FilamentMailTemplates\Filament\MailHistoryResource;
 use Filament\Pages\Actions;
-use Filament\Resources\Pages\EditRecord;
+use Filament\Resources\Pages\ViewRecord;
 
-class EditMailHistory extends EditRecord
+class ViewMailHistory extends ViewRecord
 {
     protected static string $resource = MailHistoryResource::class;
 
