@@ -33,7 +33,7 @@ class MailableTemplate extends Mailable
     public function envelope(): Envelope
     {
         // Add the to, cc, and bcc addresses, but only add to if it's not empty
-        foreach(['to', 'cc', 'bcc'] as $type) {
+        foreach (['to', 'cc', 'bcc'] as $type) {
             if ($type !== 'to' || $this->to === []) {
                 $this->{$type}($this->template->getEmailsFor($type));
             }

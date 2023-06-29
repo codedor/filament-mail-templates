@@ -4,7 +4,6 @@ namespace Codedor\FilamentMailTemplates\Filament;
 
 use Codedor\FilamentMailTemplates\Filament\MailHistoryResource\Pages;
 use Codedor\FilamentMailTemplates\Models\MailHistory;
-use Filament\Forms\Components\Card;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Section;
@@ -14,7 +13,6 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\Filter;
-use Illuminate\Support\HtmlString;
 
 class MailHistoryResource extends Resource
 {
