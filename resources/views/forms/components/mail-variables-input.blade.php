@@ -25,24 +25,14 @@
 
             $wire.dispatchFormEvent('filament-mail-templates-input::copyNotification', '{{ $getStatePath() }}', key)
         },
-        addToContent (key) {
-            $wire.dispatchFormEvent('filament-mail-templates-input::addToContent', '{{ $getStatePath() }}', key)
-        },
     }">
         <div class="flex flex-col gap-2 border p-4">
             @foreach ($getMailVariables() as $key)
-                <div class="flex gap-8 items-center">
-                    <div class="flex gap-2">
-                        <x-filament-support::icon-button
-                            icon="heroicon-o-clipboard"
-                            x-on:click="copyToClipboard('{{ $key }}')"
-                        />
-
-                        <x-filament-support::icon-button
-                            icon="heroicon-o-plus"
-                            x-on:click="addToContent('{{ $key }}')"
-                        />
-                    </div>
+                <div class="flex gap-4 items-center">
+                    <x-filament-support::icon-button
+                        icon="heroicon-o-clipboard"
+                        x-on:click="copyToClipboard('{{ $key }}')"
+                    />
 
                     <p>{{ $key }}</p>
                 </div>

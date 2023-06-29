@@ -24,6 +24,7 @@ class MailableTemplate extends Mailable
         public RegisteringMailTemplate $registeredTemplate,
         public Model $item,
         string $locale,
+        public bool $isPreview = false,
     ) {
         $this->template = $registeredTemplate->getTemplateModel();
         $this->locale($locale);
@@ -78,6 +79,11 @@ class MailableTemplate extends Mailable
 
     public function parseVariables(string $content): string
     {
+        // Don't parse variables if we're previewing, because we have no data
+        if ($this->isPreview) {
+            return $content;
+        }
+
         $data = $this->item->getMailVariables();
 
         return preg_replace_callback(

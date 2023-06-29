@@ -2,6 +2,7 @@
 
 namespace Codedor\FilamentMailTemplates;
 
+use Codedor\FilamentMailTemplates\Mail\MailableTemplate;
 use Codedor\FilamentMailTemplates\Models\MailTemplate;
 
 class RegisteringMailTemplate
@@ -70,6 +71,16 @@ class RegisteringMailTemplate
         return MailTemplate::query()
             ->where('identifier', $this->getIdentifier())
             ->first();
+    }
+
+    public function renderPreview(null|string $locale = null)
+    {
+        return (new MailableTemplate(
+            $this,
+            $this->getTemplateModel(),
+            $locale ?? $this->getLocale(),
+            true
+        ))->render();
     }
 
     public static function make(string $identifier, string $resourceType): self

@@ -11,6 +11,7 @@ class FilamentMailTemplatesServiceProvider extends PluginServiceProvider
 {
     protected array $resources = [
         Filament\MailTemplateResource::class,
+        Filament\MailHistoryResource::class,
     ];
 
     public function configurePackage(Package $package): void

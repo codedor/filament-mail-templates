@@ -74,6 +74,11 @@ class MailTemplateResource extends Resource
                 //
             ])
             ->actions([
+                Tables\Actions\Action::make('preview')
+                    ->url(fn (MailTemplate $record) => self::getUrl('preview', $record))
+                    ->label(__('filament-mail-templates::preview.button label'))
+                    ->icon('heroicon-o-eye'),
+
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
@@ -81,18 +86,11 @@ class MailTemplateResource extends Resource
             ]);
     }
 
-    public static function getRelations(): array
-    {
-        return [
-            //
-        ];
-    }
-
     public static function getPages(): array
     {
         return [
             'index' => Pages\ListMailTemplates::route('/'),
-            'create' => Pages\CreateMailTemplate::route('/create'),
+            'preview' => Pages\PreviewMailTemplate::route('/{record}/preview'),
             'edit' => Pages\EditMailTemplate::route('/{record}/edit'),
         ];
     }

@@ -4,7 +4,6 @@ namespace Codedor\FilamentMailTemplates\Forms\Components;
 
 use Filament\Forms\Components\Field;
 use Filament\Notifications\Notification;
-use Illuminate\Support\Str;
 
 class MailVariablesInput extends Field
 {
@@ -14,19 +13,6 @@ class MailVariablesInput extends Field
     {
         // Register some listeners
         $this->registerListeners([
-            'filament-mail-templates-input::addToContent' => [
-                function (self $component, string $statePath, string $key): void {
-                    if ($component->getStatePath() !== $statePath) {
-                        return;
-                    }
-
-                    // $locale = Str::between($component->getStatePath(), 'data.', '.');
-                    // $value = data_get($component->getLivewire(), "data.{$locale}.body") . "{{ {$key} }}";
-                    // $component->getLivewire()->data[$locale]['body'] = $value;
-
-                    // $component->getLivewire()->emitSelf('refresh');
-                },
-            ],
             'filament-mail-templates-input::copyNotification' => [
                 function (self $component, string $statePath, string $key): void {
                     if ($component->getStatePath() !== $statePath) {
