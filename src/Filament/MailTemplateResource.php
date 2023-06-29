@@ -109,9 +109,6 @@ class MailTemplateResource extends Resource
 
                 LocalesColumn::make('online'),
             ])
-            ->filters([
-                //
-            ])
             ->actions([
                 Tables\Actions\Action::make('preview')
                     ->url(fn (MailTemplate $record) => self::getUrl('preview', $record))
@@ -119,9 +116,6 @@ class MailTemplateResource extends Resource
                     ->icon('heroicon-o-eye'),
 
                 Tables\Actions\EditAction::make(),
-            ])
-            ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
 

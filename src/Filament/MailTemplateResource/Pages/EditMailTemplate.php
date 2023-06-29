@@ -11,4 +11,9 @@ class EditMailTemplate extends EditRecord
     use HasTranslations;
 
     protected static string $resource = MailTemplateResource::class;
+
+    protected function getActions(): array
+    {
+        return [];
+    }
 }
