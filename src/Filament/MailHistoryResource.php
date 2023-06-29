@@ -4,7 +4,6 @@ namespace Codedor\FilamentMailTemplates\Filament;
 
 use Codedor\FilamentMailTemplates\Filament\MailHistoryResource\Pages;
 use Codedor\FilamentMailTemplates\Models\MailHistory;
-use Filament\Forms\Components\Card;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Section;
@@ -14,15 +13,34 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\Filter;
-use Illuminate\Support\HtmlString;
 
 class MailHistoryResource extends Resource
 {
     protected static ?string $model = MailHistory::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    public static function getNavigationGroup(): ?string
+    {
+        return config(
+            'filament-mail-templates.navigation.history.group',
+            parent::getNavigationGroup()
+        );
+    }
 
-    protected static ?string $navigationGroup = 'Forms';
+    public static function getNavigationIcon(): string
+    {
+        return config(
+            'filament-mail-templates.navigation.history.icon',
+            parent::getNavigationIcon()
+        );
+    }
+
+    public static function shouldRegisterNavigation(): bool
+    {
+        return config(
+            'filament-mail-templates.navigation.history.shown',
+            parent::shouldRegisterNavigation()
+        );
+    }
 
     public static function form(Form $form): Form
     {

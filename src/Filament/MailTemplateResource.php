@@ -26,9 +26,29 @@ class MailTemplateResource extends Resource
 {
     protected static ?string $model = MailTemplate::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    public static function getNavigationGroup(): ?string
+    {
+        return config(
+            'filament-mail-templates.navigation.templates.group',
+            parent::getNavigationGroup()
+        );
+    }
 
-    protected static ?string $navigationGroup = 'Forms';
+    public static function getNavigationIcon(): string
+    {
+        return config(
+            'filament-mail-templates.navigation.templates.icon',
+            parent::getNavigationIcon()
+        );
+    }
+
+    public static function shouldRegisterNavigation(): bool
+    {
+        return config(
+            'filament-mail-templates.navigation.templates.shown',
+            parent::shouldRegisterNavigation()
+        );
+    }
 
     public static function form(Form $form): Form
     {
