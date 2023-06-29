@@ -24,6 +24,7 @@ class PreviewMailTemplate extends Page
     public string $preview;
 
     public string $currentLocale;
+
     public array $locales;
 
     public static function route(string $path): array
@@ -34,7 +35,7 @@ class PreviewMailTemplate extends Page
         ];
     }
 
-    protected function getTitle(): string | Htmlable
+    protected function getTitle(): string|Htmlable
     {
         return __('filament-mail-templates::preview.title :name', [
             'name' => $this->record->identifier,
