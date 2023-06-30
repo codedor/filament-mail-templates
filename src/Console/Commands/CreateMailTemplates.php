@@ -3,8 +3,8 @@
 namespace Codedor\FilamentMailTemplates\Console\Commands;
 
 use Codedor\FilamentMailTemplates\Facades\MailTemplateCollection;
-use Codedor\FilamentMailTemplates\Models\MailTemplate;
 use Codedor\FilamentMailTemplates\MailTemplateBuilder;
+use Codedor\FilamentMailTemplates\Models\MailTemplate;
 use Illuminate\Console\Command;
 
 class CreateMailTemplates extends Command
