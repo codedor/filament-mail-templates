@@ -2,9 +2,9 @@
 
 namespace Codedor\FilamentMailTemplates\Mail;
 
+use Codedor\FilamentMailTemplates\MailTemplateBuilder;
 use Codedor\FilamentMailTemplates\Models\MailHistory;
 use Codedor\FilamentMailTemplates\Models\MailTemplate;
-use Codedor\FilamentMailTemplates\MailTemplateBuilder;
 use Illuminate\Bus\Queueable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Mail\Mailable;
