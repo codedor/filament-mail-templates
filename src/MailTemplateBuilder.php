@@ -5,7 +5,7 @@ namespace Codedor\FilamentMailTemplates;
 use Codedor\FilamentMailTemplates\Mail\MailableTemplate;
 use Codedor\FilamentMailTemplates\Models\MailTemplate;
 
-class RegisteringMailTemplate
+class MailTemplateBuilder
 {
     public null|string $locale = null;
 

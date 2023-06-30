@@ -3,7 +3,7 @@
 namespace Codedor\FilamentMailTemplates\Models;
 
 use Codedor\FilamentMailTemplates\Facades\MailTemplateCollection;
-use Codedor\FilamentMailTemplates\RegisteringMailTemplate;
+use Codedor\FilamentMailTemplates\MailTemplateBuilder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Spatie\Translatable\HasTranslations;
@@ -32,7 +32,7 @@ class MailTemplate extends Model
         'to_email' => 'array',
     ];
 
-    public function getMailTemplate(): RegisteringMailTemplate
+    public function getMailTemplate(): MailTemplateBuilder
     {
         return MailTemplateCollection::getTemplate($this->identifier);
     }

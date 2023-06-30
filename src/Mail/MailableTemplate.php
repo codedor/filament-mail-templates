@@ -4,7 +4,7 @@ namespace Codedor\FilamentMailTemplates\Mail;
 
 use Codedor\FilamentMailTemplates\Models\MailHistory;
 use Codedor\FilamentMailTemplates\Models\MailTemplate;
-use Codedor\FilamentMailTemplates\RegisteringMailTemplate;
+use Codedor\FilamentMailTemplates\MailTemplateBuilder;
 use Illuminate\Bus\Queueable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Mail\Mailable;
@@ -21,12 +21,12 @@ class MailableTemplate extends Mailable
     public MailTemplate $template;
 
     public function __construct(
-        public RegisteringMailTemplate $registeredTemplate,
+        public MailTemplateBuilder $builder,
         public Model $item,
         string $locale,
         public bool $isPreview = false,
     ) {
-        $this->template = $registeredTemplate->getTemplateModel();
+        $this->template = $builder->getTemplateModel();
         $this->locale($locale);
     }
 
@@ -53,7 +53,7 @@ class MailableTemplate extends Mailable
         $body = nl2br($this->parseVariables($this->template->body));
 
         return new Content(
-            view: $this->registeredTemplate->getView(),
+            view: $this->builder->getView(),
             with: [
                 'item' => $this->item,
                 'body' => new HtmlString($body),

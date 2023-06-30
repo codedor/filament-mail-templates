@@ -6,15 +6,15 @@ use Illuminate\Support\Collection;
 
 class MailTemplateCollection extends Collection
 {
-    public function addTemplate(RegisteringMailTemplate $template): self
+    public function addTemplate(MailTemplateBuilder $builder): self
     {
-        return $this->add($template);
+        return $this->add($builder);
     }
 
-    public function getTemplate(string $identifier): RegisteringMailTemplate
+    public function getTemplate(string $identifier): MailTemplateBuilder
     {
-        return $this->first(function (RegisteringMailTemplate $template) use ($identifier) {
-            return $template->getIdentifier() === $identifier;
+        return $this->first(function (MailTemplateBuilder $builder) use ($identifier) {
+            return $builder->getIdentifier() === $identifier;
         });
     }
 }

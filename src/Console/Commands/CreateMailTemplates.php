@@ -4,7 +4,7 @@ namespace Codedor\FilamentMailTemplates\Console\Commands;
 
 use Codedor\FilamentMailTemplates\Facades\MailTemplateCollection;
 use Codedor\FilamentMailTemplates\Models\MailTemplate;
-use Codedor\FilamentMailTemplates\RegisteringMailTemplate;
+use Codedor\FilamentMailTemplates\MailTemplateBuilder;
 use Illuminate\Console\Command;
 
 class CreateMailTemplates extends Command
@@ -15,9 +15,9 @@ class CreateMailTemplates extends Command
 
     public function handle(): void
     {
-        MailTemplateCollection::each(function (RegisteringMailTemplate $template) {
+        MailTemplateCollection::each(function (MailTemplateBuilder $builder) {
             MailTemplate::updateOrCreate([
-                'identifier' => $template->getIdentifier(),
+                'identifier' => $builder->getIdentifier(),
             ]);
         });
     }

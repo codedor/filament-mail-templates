@@ -63,6 +63,7 @@ class MailTemplateResource extends Resource
                         ->content(fn (Model $record) => $record->description),
 
                     Repeater::make('to_email')
+                        ->helperText('If left empty, the sites default e-mail will be used.')
                         ->label('Target e-mails')
                         ->schema([
                             Grid::make()->schema([

@@ -4,7 +4,7 @@ namespace Codedor\FilamentMailTemplates\Models\Traits;
 
 use Codedor\FilamentMailTemplates\Facades\MailTemplateCollection;
 use Codedor\FilamentMailTemplates\Mail\MailableTemplate;
-use Codedor\FilamentMailTemplates\RegisteringMailTemplate;
+use Codedor\FilamentMailTemplates\MailTemplateBuilder;
 
 trait HasMails
 {
@@ -20,13 +20,13 @@ trait HasMails
         return new MailableTemplate($template, $this, $locale);
     }
 
-    public static function registerMail($identifier): RegisteringMailTemplate
+    public static function registerMail($identifier): MailTemplateBuilder
     {
-        $template = RegisteringMailTemplate::make($identifier, self::class);
+        $builder = MailTemplateBuilder::make($identifier, self::class);
 
-        MailTemplateCollection::addTemplate($template);
+        MailTemplateCollection::addTemplate($builder);
 
-        return $template;
+        return $builder;
     }
 
     public function getMailVariables(): array
