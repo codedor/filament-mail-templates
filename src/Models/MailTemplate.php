@@ -4,6 +4,7 @@ namespace Codedor\FilamentMailTemplates\Models;
 
 use Codedor\FilamentMailTemplates\Facades\MailTemplateCollection;
 use Codedor\FilamentMailTemplates\MailTemplateBuilder;
+use Codedor\LocaleCollection\Facades\LocaleCollection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Spatie\Translatable\HasTranslations;
@@ -19,7 +20,6 @@ class MailTemplate extends Model
         'to_email',
         'subject',
         'body',
-        'online',
     ];
 
     protected $translatable = [
@@ -40,6 +40,13 @@ class MailTemplate extends Model
     public function getDescriptionAttribute(): null|string
     {
         return $this->getMailTemplate()->getDescription();
+    }
+
+    public function getOnlineAttribute()
+    {
+        return LocaleCollection::mapWithKeys(fn ($locale) => [
+            $locale->locale() => true,
+        ]);
     }
 
     public function getEmailsFor(string $type): Collection

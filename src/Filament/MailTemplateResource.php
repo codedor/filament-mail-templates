@@ -2,7 +2,6 @@
 
 namespace Codedor\FilamentMailTemplates\Filament;
 
-use Closure;
 use Codedor\FilamentMailTemplates\Filament\MailTemplateResource\Pages;
 use Codedor\FilamentMailTemplates\Forms\Components\MailVariablesInput;
 use Codedor\FilamentMailTemplates\Models\MailTemplate;
@@ -13,7 +12,6 @@ use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Toggle;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
@@ -83,18 +81,12 @@ class MailTemplateResource extends Resource
                 ->translatableFields([
                     Grid::make(3)->schema([
                         TextInput::make('subject')
-                            ->required(fn (Closure $get) => $get('online'))
                             ->columnSpan(['lg' => 3]),
 
                         TiptapEditor::make('body')
-                            ->required(fn (Closure $get) => $get('online'))
                             ->columnSpan(['lg' => 2]),
 
                         MailVariablesInput::make('variables'),
-
-                        Toggle::make('online')
-                            ->columnSpan(['lg' => 3])
-                            ->label('Online'),
                     ]),
                 ]),
         ]);

@@ -22,7 +22,6 @@ return new class extends Migration
 
             $table->json('subject')->nullable();
             $table->json('body')->nullable();
-            $table->json('online')->nullable();
 
             $table->timestamps();
         });
