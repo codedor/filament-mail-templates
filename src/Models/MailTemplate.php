@@ -4,7 +4,6 @@ namespace Codedor\FilamentMailTemplates\Models;
 
 use Codedor\FilamentMailTemplates\Facades\MailTemplateCollection;
 use Codedor\FilamentMailTemplates\MailTemplateBuilder;
-use Codedor\LocaleCollection\Facades\LocaleCollection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Spatie\Translatable\HasTranslations;
