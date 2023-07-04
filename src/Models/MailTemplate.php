@@ -44,9 +44,7 @@ class MailTemplate extends Model
 
     public function getOnlineAttribute()
     {
-        return LocaleCollection::mapWithKeys(fn ($locale) => [
-            $locale->locale() => true,
-        ]);
+        return true;
     }
 
     public function getEmailsFor(string $type): Collection

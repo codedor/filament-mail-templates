@@ -53,6 +53,7 @@ class MailTemplateResource extends Resource
         return $form->schema([
             TranslatableTabs::make('Translations')
                 ->columnSpan(['lg' => 2])
+                ->icon(false)
                 ->defaultFields([
                     Placeholder::make('identifier')
                         ->content(fn (Model $record) => $record->identifier),
