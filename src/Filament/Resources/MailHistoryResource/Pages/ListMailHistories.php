@@ -2,7 +2,7 @@
 
 namespace Codedor\FilamentMailTemplates\Filament\Resources\MailHistoryResource\Pages;
 
-use Codedor\FilamentMailTemplates\Resources\Filament\MailHistoryResource;
+use Codedor\FilamentMailTemplates\Filament\Resources\MailHistoryResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
 
