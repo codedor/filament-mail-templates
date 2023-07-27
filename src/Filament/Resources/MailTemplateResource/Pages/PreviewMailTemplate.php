@@ -35,7 +35,7 @@ class PreviewMailTemplate extends Page
         ];
     }
 
-    public function getTitle(): string | Htmlable
+    public function getTitle(): string|Htmlable
     {
         return __('filament-mail-templates::preview.title :name', [
             'name' => $this->record->identifier,
