@@ -3,7 +3,6 @@
 namespace Codedor\FilamentMailTemplates\Providers;
 
 use Codedor\FilamentMailTemplates\Console\Commands;
-use Filament\PluginServiceProvider;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
