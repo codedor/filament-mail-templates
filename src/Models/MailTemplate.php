@@ -36,7 +36,7 @@ class MailTemplate extends Model
         return MailTemplateCollection::getTemplate($this->identifier);
     }
 
-    public function getDescriptionAttribute(): null|string
+    public function getDescriptionAttribute(): ?string
     {
         return $this->getMailTemplate()->getDescription();
     }
