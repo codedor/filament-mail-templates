@@ -1,8 +1,8 @@
 <?php
 
-namespace Codedor\FilamentMailTemplates\Filament;
+namespace Codedor\FilamentMailTemplates\Filament\Resources;
 
-use Codedor\FilamentMailTemplates\Filament\MailTemplateResource\Pages;
+use Codedor\FilamentMailTemplates\Filament\Resources\MailTemplateResource\Pages;
 use Codedor\FilamentMailTemplates\Forms\Components\MailVariablesInput;
 use Codedor\FilamentMailTemplates\Models\MailTemplate;
 use Codedor\TranslatableTabs\Forms\TranslatableTabs;
@@ -12,11 +12,11 @@ use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Table;
 use FilamentTiptapEditor\TiptapEditor;
 use Illuminate\Database\Eloquent\Model;
 

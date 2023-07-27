@@ -1,8 +1,8 @@
 <?php
 
-namespace Codedor\FilamentSettings\Filament;
+namespace Codedor\FilamentMailTemplates\Filament;
 
-use Codedor\FilamentMailTemplates\Filament\MailTemplateResource;
+use Codedor\FilamentMailTemplates\Filament\Resources\MailTemplateResource;
 use Codedor\FilamentMailTemplates\Filament\Resources\MailHistoryResource;
 use Filament\Contracts\Plugin;
 use Filament\Panel;
