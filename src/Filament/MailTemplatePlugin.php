@@ -2,8 +2,8 @@
 
 namespace Codedor\FilamentMailTemplates\Filament;
 
-use Codedor\FilamentMailTemplates\Filament\Resources\MailTemplateResource;
 use Codedor\FilamentMailTemplates\Filament\Resources\MailHistoryResource;
+use Codedor\FilamentMailTemplates\Filament\Resources\MailTemplateResource;
 use Filament\Contracts\Plugin;
 use Filament\Panel;
 
