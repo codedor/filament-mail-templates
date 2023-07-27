@@ -7,12 +7,12 @@ return [
     ],
     'navigation' => [
         'templates' => [
-            'icon' => 'heroicon-o-inbox',
+            'icon' => 'heroicon-o-envelope',
             'group' => 'Mails',
             'shown' => true,
         ],
         'history' => [
-            'icon' => 'heroicon-o-mail',
+            'icon' => 'heroicon-o-inbox',
             'group' => 'Mails',
             'shown' => true,
         ],

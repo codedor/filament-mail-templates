@@ -31,6 +31,11 @@ class PreviewMailTemplate extends Page
 
     public array $locales;
 
+    public function getBreadcrumb(): string
+    {
+        return __('filament-mail-templates::preview.button label');
+    }
+
     public static function route(string $path): PageRegistration
     {
         return new PageRegistration(
@@ -63,7 +68,7 @@ class PreviewMailTemplate extends Page
             ->getMailTemplate()
             ->renderPreview($locale);
 
-        $this->dispatchBrowserEvent('filament-mail-templates::update-preview-content', [
+        $this->dispatch('filament-mail-templates::update-preview-content', [
             'content' => $this->preview,
         ]);
     }

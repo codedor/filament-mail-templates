@@ -105,7 +105,7 @@ class MailTemplateResource extends Resource
             ])
             ->actions([
                 Tables\Actions\Action::make('preview')
-                    ->url(fn (MailTemplate $record) => self::getUrl('preview', $record))
+                    ->url(fn (MailTemplate $record) => self::getUrl('preview', [$record]))
                     ->label(__('filament-mail-templates::preview.button label'))
                     ->icon('heroicon-o-eye'),
 
