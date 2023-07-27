@@ -1,8 +1,8 @@
 <?php
 
-namespace Codedor\FilamentMailTemplates\Filament\MailTemplateResource\Pages;
+namespace Codedor\FilamentMailTemplates\Filament\Resources\MailTemplateResource\Pages;
 
-use Codedor\FilamentMailTemplates\Filament\MailTemplateResource;
+use Codedor\FilamentMailTemplates\Filament\Resources\MailTemplateResource;
 use Filament\Resources\Pages\ListRecords;
 
 class ListMailTemplates extends ListRecords

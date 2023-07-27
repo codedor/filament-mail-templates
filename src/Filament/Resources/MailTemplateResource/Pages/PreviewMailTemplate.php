@@ -1,8 +1,8 @@
 <?php
 
-namespace Codedor\FilamentMailTemplates\Filament\MailTemplateResource\Pages;
+namespace Codedor\FilamentMailTemplates\Filament\Resources\MailTemplateResource\Pages;
 
-use Codedor\FilamentMailTemplates\Filament\MailTemplateResource;
+use Codedor\FilamentMailTemplates\Filament\Resources\MailTemplateResource;
 use Codedor\FilamentMailTemplates\Models\MailTemplate;
 use Codedor\LocaleCollection\Facades\LocaleCollection;
 use Filament\Pages\Page;
@@ -35,7 +35,7 @@ class PreviewMailTemplate extends Page
         ];
     }
 
-    protected function getTitle(): string|Htmlable
+    public function getTitle(): string | Htmlable
     {
         return __('filament-mail-templates::preview.title :name', [
             'name' => $this->record->identifier,

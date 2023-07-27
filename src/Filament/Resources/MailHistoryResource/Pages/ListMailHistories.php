@@ -1,9 +1,9 @@
 <?php
 
-namespace Codedor\FilamentMailTemplates\Filament\MailHistoryResource\Pages;
+namespace Codedor\FilamentMailTemplates\Filament\Resources\MailHistoryResource\Pages;
 
-use Codedor\FilamentMailTemplates\Filament\MailHistoryResource;
-use Filament\Pages\Actions;
+use Codedor\FilamentMailTemplates\Resources\Filament\MailHistoryResource;
+use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
 
 class ListMailHistories extends ListRecords
