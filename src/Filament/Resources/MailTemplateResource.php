@@ -2,8 +2,8 @@
 
 namespace Codedor\FilamentMailTemplates\Filament\Resources;
 
+// use App\Filament\Forms\Components\PlaceholderInput;
 use Codedor\FilamentMailTemplates\Filament\Resources\MailTemplateResource\Pages;
-use Codedor\FilamentMailTemplates\Forms\Components\MailVariablesInput;
 use Codedor\FilamentMailTemplates\Models\MailTemplate;
 use Codedor\TranslatableTabs\Forms\TranslatableTabs;
 use Codedor\TranslatableTabs\Tables\LocalesColumn;
@@ -79,7 +79,7 @@ class MailTemplateResource extends Resource
                             ]),
                         ]),
                 ])
-                ->translatableFields([
+                ->translatableFields(fn (string $locale) => [
                     Grid::make(3)->schema([
                         TextInput::make('subject')
                             ->columnSpan(['lg' => 3]),
@@ -87,7 +87,14 @@ class MailTemplateResource extends Resource
                         TiptapEditor::make('body')
                             ->columnSpan(['lg' => 2]),
 
-                        MailVariablesInput::make('variables'),
+                        // PlaceholderInput::make('variables')
+                        //     ->variables(fn (MailTemplate $record): array => $record->getMailVariables())
+                        //     ->labels(fn (MailTemplate $record): array => $record->getMailVariablesLabels())
+                        //     ->canCopy()
+                        //     ->linksWith([
+                        //         "{$locale}.subject" => 'Subject',
+                        //         "{$locale}.body" => 'Body',
+                        //     ]),
                     ]),
                 ]),
         ]);

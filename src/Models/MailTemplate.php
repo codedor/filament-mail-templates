@@ -36,6 +36,28 @@ class MailTemplate extends Model
         return MailTemplateCollection::getTemplate($this->identifier);
     }
 
+    public function getMailVariables(): array
+    {
+        $model = $this->getMailTemplate()?->getResourceType();
+
+        if (! $model) {
+            return [];
+        }
+
+        return array_keys((new $model)->getMailVariables());
+    }
+
+    public function getMailVariablesLabels(): array
+    {
+        $model = $this->getMailTemplate()?->getResourceType();
+
+        if (! $model || ! method_exists($model, 'getMailVariableLabels')) {
+            return [];
+        }
+
+        return (new $model)->getMailVariableLabels();
+    }
+
     public function getDescriptionAttribute(): ?string
     {
         return $this->getMailTemplate()->getDescription();
