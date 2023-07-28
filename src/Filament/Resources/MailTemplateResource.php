@@ -81,20 +81,16 @@ class MailTemplateResource extends Resource
                 ])
                 ->translatableFields(fn (string $locale) => [
                     Grid::make(3)->schema([
-                        TextInput::make('subject')
-                            ->columnSpan(['lg' => 3]),
-
-                        TiptapEditor::make('body')
-                            ->columnSpan(['lg' => 2]),
+                        Grid::make(1)
+                            ->columnSpan(['lg' => 2])
+                            ->schema([
+                                TextInput::make('subject'),
+                                TiptapEditor::make('body'),
+                            ]),
 
                         PlaceholderInput::make('variables')
-                            ->variables(fn (MailTemplate $record): array => $record->getMailVariables())
-                            ->labels(fn (MailTemplate $record): array => $record->getMailVariablesLabels())
-                            ->canCopy()
-                            ->linksWith([
-                                "{$locale}.subject" => 'Subject',
-                                "{$locale}.body" => 'Body',
-                            ]),
+                            ->linksWith(["{$locale}.subject", "{$locale}.body"])
+                            ->copyable(),
                     ]),
                 ]),
         ]);
