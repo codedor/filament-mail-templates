@@ -2,9 +2,9 @@
 
 namespace Codedor\FilamentMailTemplates\Filament\Resources;
 
-// use App\Filament\Forms\Components\PlaceholderInput;
 use Codedor\FilamentMailTemplates\Filament\Resources\MailTemplateResource\Pages;
 use Codedor\FilamentMailTemplates\Models\MailTemplate;
+use Codedor\FilamentPlaceholderInput\Filament\Forms\Components\PlaceholderInput;
 use Codedor\TranslatableTabs\Forms\TranslatableTabs;
 use Codedor\TranslatableTabs\Tables\LocalesColumn;
 use Filament\Forms\Components\Grid;
@@ -87,14 +87,14 @@ class MailTemplateResource extends Resource
                         TiptapEditor::make('body')
                             ->columnSpan(['lg' => 2]),
 
-                        // PlaceholderInput::make('variables')
-                        //     ->variables(fn (MailTemplate $record): array => $record->getMailVariables())
-                        //     ->labels(fn (MailTemplate $record): array => $record->getMailVariablesLabels())
-                        //     ->canCopy()
-                        //     ->linksWith([
-                        //         "{$locale}.subject" => 'Subject',
-                        //         "{$locale}.body" => 'Body',
-                        //     ]),
+                        PlaceholderInput::make('variables')
+                            ->variables(fn (MailTemplate $record): array => $record->getMailVariables())
+                            ->labels(fn (MailTemplate $record): array => $record->getMailVariablesLabels())
+                            ->canCopy()
+                            ->linksWith([
+                                "{$locale}.subject" => 'Subject',
+                                "{$locale}.body" => 'Body',
+                            ]),
                     ]),
                 ]),
         ]);

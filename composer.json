@@ -13,6 +13,7 @@
         "illuminate/contracts": "^10.0",
         "awcodes/filament-tiptap-editor": "dev-livewire-v3 as 3.0.0",
         "codedor/filament-link-picker": "dev-filament-v3",
+        "codedor/filament-placeholder-input": "dev-master as 1.0.0",
         "codedor/filament-translatable-tabs": "dev-filament-v3",
         "codedor/laravel-locale-collection": "^0.0.3",
         "spatie/laravel-package-tools": "^1.12",
