@@ -11,7 +11,7 @@
     "require": {
         "php": "^8.2",
         "illuminate/contracts": "^10.0",
-        "awcodes/filament-tiptap-editor": "dev-livewire-v3 as 3.0.0",
+        "awcodes/filament-tiptap-editor": "^3.0",
         "codedor/filament-link-picker": "dev-filament-v3",
         "codedor/filament-placeholder-input": "dev-master as 1.0.0",
         "codedor/filament-translatable-tabs": "dev-filament-v3",
