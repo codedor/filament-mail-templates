@@ -7,11 +7,11 @@ use Codedor\FilamentMailTemplates\Models\MailTemplate;
 
 class MailTemplateBuilder
 {
-    public null|string $locale = null;
+    public ?string $locale = null;
 
-    public null|string $view = null;
+    public ?string $view = null;
 
-    public null|string $description = null;
+    public ?string $description = null;
 
     public function __construct(
         public string $identifier,
@@ -20,7 +20,7 @@ class MailTemplateBuilder
         //
     }
 
-    public function view(null|string $view): self
+    public function view(?string $view): self
     {
         $this->view = $view;
 
@@ -32,7 +32,7 @@ class MailTemplateBuilder
         return $this->view ?? config('filament-mail-templates.default.view');
     }
 
-    public function locale(null|string $locale): self
+    public function locale(?string $locale): self
     {
         $this->locale = $locale;
 
@@ -73,7 +73,7 @@ class MailTemplateBuilder
             ->first();
     }
 
-    public function renderPreview(null|string $locale = null)
+    public function renderPreview(string $locale = null)
     {
         return (new MailableTemplate(
             $this,
