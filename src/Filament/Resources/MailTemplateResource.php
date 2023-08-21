@@ -51,15 +51,15 @@ class MailTemplateResource extends Resource
     public static function form(Form $form): Form
     {
         return $form->schema([
-            TranslatableTabs::make('Translations')
+            TranslatableTabs::make()
                 ->columnSpan(['lg' => 2])
                 ->icon(false)
                 ->defaultFields([
                     Placeholder::make('identifier')
-                        ->content(fn (Model $record) => $record->identifier),
+                        ->content(fn (MailTemplate $record) => $record->identifier),
 
                     Placeholder::make('description')
-                        ->content(fn (Model $record) => $record->description),
+                        ->content(fn (MailTemplate $record) => $record->description),
 
                     Repeater::make('to_email')
                         ->helperText('If left empty, the sites default e-mail will be used.')
