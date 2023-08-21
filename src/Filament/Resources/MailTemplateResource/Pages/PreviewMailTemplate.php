@@ -1,15 +1,19 @@
 <?php
 
-namespace Codedor\FilamentMailTemplates\Filament\MailTemplateResource\Pages;
+namespace Codedor\FilamentMailTemplates\Filament\Resources\MailTemplateResource\Pages;
 
-use Codedor\FilamentMailTemplates\Filament\MailTemplateResource;
+use Codedor\FilamentMailTemplates\Filament\Resources\MailTemplateResource;
 use Codedor\FilamentMailTemplates\Models\MailTemplate;
 use Codedor\LocaleCollection\Facades\LocaleCollection;
 use Filament\Pages\Page;
+use Filament\Panel;
 use Filament\Resources\Pages\Concerns\InteractsWithRecord;
+use Filament\Resources\Pages\PageRegistration;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Route as FacadesRoute;
 
 class PreviewMailTemplate extends Page
 {
@@ -27,15 +31,21 @@ class PreviewMailTemplate extends Page
 
     public array $locales;
 
-    public static function route(string $path): array
+    public function getBreadcrumb(): string
     {
-        return [
-            'class' => static::class,
-            'route' => $path,
-        ];
+        return __('filament-mail-templates::preview.button label');
     }
 
-    protected function getTitle(): string|Htmlable
+    public static function route(string $path): PageRegistration
+    {
+        return new PageRegistration(
+            page: static::class,
+            route: fn (Panel $panel): Route => FacadesRoute::get($path, static::class)
+                ->middleware(static::getRouteMiddleware($panel)),
+        );
+    }
+
+    public function getTitle(): string|Htmlable
     {
         return __('filament-mail-templates::preview.title :name', [
             'name' => $this->record->identifier,
@@ -52,13 +62,13 @@ class PreviewMailTemplate extends Page
         $this->updatedCurrentLocale($this->currentLocale);
     }
 
-    public function updatedCurrentLocale(string $locale): void
+    public function updatedCurOrentLocale(string $locale): void
     {
         $this->preview = $this->record
             ->getMailTemplate()
             ->renderPreview($locale);
 
-        $this->dispatchBrowserEvent('filament-mail-templates::update-preview-content', [
+        $this->dispatch('filament-mail-templates::update-preview-content', [
             'content' => $this->preview,
         ]);
     }

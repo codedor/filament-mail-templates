@@ -10,11 +10,13 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
-        "illuminate/contracts": "^10.0",
-        "awcodes/filament-tiptap-editor": "^2.6",
-        "codedor/filament-link-picker": "dev-master",
-        "codedor/filament-translatable-tabs": "dev-master",
+        "awcodes/filament-tiptap-editor": "^3.0",
+        "codedor/filament-link-picker": "^0.1",
+        "codedor/filament-placeholder-input": "^0.2",
+        "codedor/filament-translatable-tabs": "^0.1",
         "codedor/laravel-locale-collection": "^0.0.3",
+        "filament/filament": "^3.0",
+        "illuminate/contracts": "^10.0",
         "spatie/laravel-package-tools": "^1.12",
         "spatie/laravel-translatable": "^6.5"
     },

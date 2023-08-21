@@ -3,17 +3,11 @@
 namespace Codedor\FilamentMailTemplates\Providers;
 
 use Codedor\FilamentMailTemplates\Console\Commands;
-use Codedor\FilamentMailTemplates\Filament;
-use Filament\PluginServiceProvider;
 use Spatie\LaravelPackageTools\Package;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class FilamentMailTemplatesServiceProvider extends PluginServiceProvider
+class FilamentMailTemplatesServiceProvider extends PackageServiceProvider
 {
-    protected array $resources = [
-        Filament\MailTemplateResource::class,
-        Filament\MailHistoryResource::class,
-    ];
-
     public function configurePackage(Package $package): void
     {
         $package

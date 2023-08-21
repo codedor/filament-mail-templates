@@ -1,10 +1,10 @@
 <?php
 
-namespace Codedor\FilamentMailTemplates\Filament;
+namespace Codedor\FilamentMailTemplates\Filament\Resources;
 
-use Codedor\FilamentMailTemplates\Filament\MailTemplateResource\Pages;
-use Codedor\FilamentMailTemplates\Forms\Components\MailVariablesInput;
+use Codedor\FilamentMailTemplates\Filament\Resources\MailTemplateResource\Pages;
 use Codedor\FilamentMailTemplates\Models\MailTemplate;
+use Codedor\FilamentPlaceholderInput\Filament\Forms\Components\PlaceholderInput;
 use Codedor\TranslatableTabs\Forms\TranslatableTabs;
 use Codedor\TranslatableTabs\Tables\LocalesColumn;
 use Filament\Forms\Components\Grid;
@@ -12,13 +12,12 @@ use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Table;
 use FilamentTiptapEditor\TiptapEditor;
-use Illuminate\Database\Eloquent\Model;
 
 class MailTemplateResource extends Resource
 {
@@ -51,15 +50,15 @@ class MailTemplateResource extends Resource
     public static function form(Form $form): Form
     {
         return $form->schema([
-            TranslatableTabs::make('Translations')
+            TranslatableTabs::make()
                 ->columnSpan(['lg' => 2])
                 ->icon(false)
                 ->defaultFields([
                     Placeholder::make('identifier')
-                        ->content(fn (Model $record) => $record->identifier),
+                        ->content(fn (MailTemplate $record) => $record->identifier),
 
                     Placeholder::make('description')
-                        ->content(fn (Model $record) => $record->description),
+                        ->content(fn (MailTemplate $record) => $record->description),
 
                     Repeater::make('to_email')
                         ->helperText('If left empty, the sites default e-mail will be used.')
@@ -79,15 +78,18 @@ class MailTemplateResource extends Resource
                             ]),
                         ]),
                 ])
-                ->translatableFields([
+                ->translatableFields(fn (string $locale) => [
                     Grid::make(3)->schema([
-                        TextInput::make('subject')
-                            ->columnSpan(['lg' => 3]),
+                        Grid::make(1)
+                            ->columnSpan(['lg' => 2])
+                            ->schema([
+                                TextInput::make('subject'),
+                                TiptapEditor::make('body'),
+                            ]),
 
-                        TiptapEditor::make('body')
-                            ->columnSpan(['lg' => 2]),
-
-                        MailVariablesInput::make('variables'),
+                        PlaceholderInput::make('variables')
+                            ->linksWith(["{$locale}.subject", "{$locale}.body"])
+                            ->copyable(),
                     ]),
                 ]),
         ]);
@@ -105,7 +107,7 @@ class MailTemplateResource extends Resource
             ])
             ->actions([
                 Tables\Actions\Action::make('preview')
-                    ->url(fn (MailTemplate $record) => self::getUrl('preview', $record))
+                    ->url(fn (MailTemplate $record) => self::getUrl('preview', [$record]))
                     ->label(__('filament-mail-templates::preview.button label'))
                     ->icon('heroicon-o-eye'),
 

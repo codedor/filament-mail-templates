@@ -2,7 +2,7 @@
     {{ $record->description }}
 
     <div class="w-full">
-        <select wire:model="currentLocale">
+        <select wire:model.live="currentLocale">
             @foreach ($locales as $locale)
                 <option value="{{ $locale }}">{{ $locale }}</option>
             @endforeach
@@ -13,7 +13,7 @@
         init () {
             this.updatePreview(@js($preview))
 
-            window.addEventListener('filament-mail-templates::update-preview-content', (e) => {
+            $wire.$on('filament-mail-templates::update-preview-content', (e) => {
                 this.updatePreview(e.detail.content)
             })
         },
@@ -26,7 +26,7 @@
         }
     }">
         <div wire:loading.flex class="w-full justify-center py-8">
-            <x-filament-support::loading-indicator class="h-8 w-8" />
+            <x-filament::loading-indicator class="h-8 w-8" />
         </div>
 
         <div wire:loading.remove>

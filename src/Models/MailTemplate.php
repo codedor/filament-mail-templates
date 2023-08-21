@@ -8,6 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Spatie\Translatable\HasTranslations;
 
+/**
+ * @property string $identifier
+ * @property string $from_name
+ * @property string $from_email
+ * @property string $to_email
+ * @property string $subject
+ * @property string $body
+ */
 class MailTemplate extends Model
 {
     use HasTranslations;
@@ -34,6 +42,17 @@ class MailTemplate extends Model
     public function getMailTemplate(): MailTemplateBuilder
     {
         return MailTemplateCollection::getTemplate($this->identifier);
+    }
+
+    public function getPlaceholderVariables(): array
+    {
+        $model = $this->getMailTemplate()->getResourceType();
+
+        if (! $model || ! method_exists($model, 'getPlaceholderVariables')) {
+            return [];
+        }
+
+        return (new $model)->getPlaceholderVariables();
     }
 
     public function getDescriptionAttribute(): ?string

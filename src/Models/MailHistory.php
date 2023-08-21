@@ -4,6 +4,19 @@ namespace Codedor\FilamentMailTemplates\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property string $mail_template_id
+ * @property string $mailed_resource_type
+ * @property string $mailed_resource_id
+ * @property string $to_emails
+ * @property string $cc_emails
+ * @property string $bcc_emails
+ * @property string $from_email
+ * @property string $from_name
+ * @property string $subject
+ * @property string $content
+ * @property string $locale
+ */
 class MailHistory extends Model
 {
     protected $table = 'mail_history';

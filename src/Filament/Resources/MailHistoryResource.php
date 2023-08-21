@@ -1,18 +1,18 @@
 <?php
 
-namespace Codedor\FilamentMailTemplates\Filament;
+namespace Codedor\FilamentMailTemplates\Filament\Resources;
 
-use Codedor\FilamentMailTemplates\Filament\MailHistoryResource\Pages;
+use Codedor\FilamentMailTemplates\Filament\Resources\MailHistoryResource\Pages;
 use Codedor\FilamentMailTemplates\Models\MailHistory;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Section;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\Filter;
+use Filament\Tables\Table;
 
 class MailHistoryResource extends Resource
 {
@@ -116,6 +116,11 @@ class MailHistoryResource extends Resource
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
+    }
+
+    public static function canCreate(): bool
+    {
+        return false;
     }
 
     public static function getPages(): array
