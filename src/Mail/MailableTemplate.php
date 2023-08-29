@@ -5,6 +5,7 @@ namespace Codedor\FilamentMailTemplates\Mail;
 use Codedor\FilamentMailTemplates\MailTemplateBuilder;
 use Codedor\FilamentMailTemplates\Models\MailHistory;
 use Codedor\FilamentMailTemplates\Models\MailTemplate;
+use Codedor\FilamentPlaceholderInput\PlaceholderVariable;
 use Illuminate\Bus\Queueable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Mail\Mailable;
@@ -94,7 +95,9 @@ class MailableTemplate extends Mailable
             return $content;
         }
 
-        $data = $this->item->getMailVariables();
+        $data = collect($this->item->getPlaceholderVariables())
+            ->mapWithKeys(fn (PlaceholderVariable $value) => [$value->getKey() => $value->getValue()])
+            ->toArray();
 
         return preg_replace_callback(
             '/{{ (?<keyword>.*?) }}/',

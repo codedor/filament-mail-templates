@@ -68,7 +68,7 @@ class MailTemplate extends Model
     public function getEmailsFor(string $type): Collection
     {
         return $this->getAllEmails()
-            ->filter(fn ($email) => $email['type'] === $type)
+            ->filter(fn ($email) => ($email['type'] ?? $email) === $type)
             ->pluck('email');
     }
 

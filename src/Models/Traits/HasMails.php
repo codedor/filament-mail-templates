@@ -29,7 +29,7 @@ trait HasMails
         return $builder;
     }
 
-    public function getMailVariables(): array
+    public function getPlaceholderVariables(): array
     {
         return [];
     }

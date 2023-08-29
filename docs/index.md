@@ -26,28 +26,27 @@ class Inquiry extends Model
 }
 ```
 
-After doing this, you'll also need to define what fields you want to be able to use in the mail template. To do this you'll need to define the fields in the `getMailVariables` method.
-
-The keys in this array will be the variables that show up in the mail template as labels, and the values will be the values that will be used in the mail template, when sent.
+After doing this, you'll also need to define what fields you want to be able to use in the mail template. To do this you'll need to define the fields in the `getPlaceholderVariables` method of the model. This method should return an array of `Codedor\FilamentPlaceholderInput\PlaceholderVariable` objects.
 
 ```php
 namespace App\Models;
 
 use Codedor\FilamentMailTemplates\Models\Traits\HasMails;
+use Codedor\FilamentPlaceholderInput\PlaceholderVariable;
 use Illuminate\Database\Eloquent\Model;
 
 class Inquiry extends Model
 {
     use HasMails;
 
-    public function getMailVariables(): array
+    public function getPlaceholderVariables(): array
     {
         return [
-            'first name' => $this->first_name,
-            'last name' => $this->last_name,
-            'e-mail' => $this->email,
-            'message body' => $this->message,
-            'inquiry type' => $this->inquiryType?->working_title,
+            PlaceholderVariable::make('first name', 'First name', $this->first_name),
+            PlaceholderVariable::make('last name', 'Last name', $this->last_name),
+            PlaceholderVariable::make('e-mail', 'E-mail', $this->email),
+            PlaceholderVariable::make('message body', 'Message content', $this->message),
+            PlaceholderVariable::make('inquiry type', 'Used inquiry type', $this->inquiryType?->working_title),
         ];
     }
 

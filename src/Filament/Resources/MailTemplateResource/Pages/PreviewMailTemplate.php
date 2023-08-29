@@ -62,7 +62,7 @@ class PreviewMailTemplate extends Page
         $this->updatedCurrentLocale($this->currentLocale);
     }
 
-    public function updatedCurOrentLocale(string $locale): void
+    public function updatedCurrentLocale(string $locale): void
     {
         $this->preview = $this->record
             ->getMailTemplate()
