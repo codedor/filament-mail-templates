@@ -79,6 +79,13 @@ class AppServiceProvider extends ServiceProvider
 
 The `registerMail` method takes a string as the first argument, this is the name/identifier of the mail template and should be kebabcase. A description can be given as well, this is optional but will provide the admin additional information about the mail template in the Filament resource.
 
+If your template does not need a target e-mail field, you can add `disableTargetField` to your template:
+
+```php
+Models\Inquiry::registerMail('inquiry-user')
+    ->disableTargetField();
+```
+
 ## Saving the Mail Templates
 
 When you are done defining your templates, run the following command:

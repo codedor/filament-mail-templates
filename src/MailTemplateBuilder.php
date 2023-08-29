@@ -13,6 +13,8 @@ class MailTemplateBuilder
 
     public ?string $description = null;
 
+    public ?bool $hasTargetField = true;
+
     public function __construct(
         public string $identifier,
         public string $resourceType,
@@ -64,6 +66,18 @@ class MailTemplateBuilder
     public function getDescription(): string
     {
         return $this->description;
+    }
+
+    public function disableTargetField(): self
+    {
+        $this->hasTargetField = false;
+
+        return $this;
+    }
+
+    public function hasTargetField(): bool
+    {
+        return $this->hasTargetField;
     }
 
     public function getTemplateModel(): MailTemplate

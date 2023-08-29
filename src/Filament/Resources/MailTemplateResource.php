@@ -63,6 +63,7 @@ class MailTemplateResource extends Resource
                     Repeater::make('to_email')
                         ->helperText('If left empty, the sites default e-mail will be used.')
                         ->label('Target e-mails')
+                        ->hidden(fn (MailTemplate $record) => ! $record->getMailTemplate()->hasTargetField())
                         ->schema([
                             Grid::make()->schema([
                                 TextInput::make('email')
