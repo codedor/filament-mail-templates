@@ -24,7 +24,7 @@ trait HasMails
     {
         $builder = MailTemplateBuilder::make($identifier, self::class);
 
-        MailTemplateCollection::addTemplate($builder);
+        MailTemplateCollection::add($builder);
 
         return $builder;
     }

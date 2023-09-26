@@ -3,6 +3,7 @@
 namespace Codedor\FilamentMailTemplates\Providers;
 
 use Codedor\FilamentMailTemplates\Console\Commands;
+use Codedor\FilamentMailTemplates\MailTemplateCollection;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -24,5 +25,12 @@ class FilamentMailTemplatesServiceProvider extends PackageServiceProvider
             ->hasConsoleCommands([
                 Commands\CreateMailTemplates::class,
             ]);
+    }
+
+    public function registeringPackage(): void
+    {
+        $this->app->singleton(MailTemplateCollection::class, function () {
+            return new MailTemplateCollection;
+        });
     }
 }
