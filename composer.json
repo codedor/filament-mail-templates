@@ -14,7 +14,7 @@
         "codedor/filament-link-picker": "^0.1",
         "codedor/filament-placeholder-input": "^0.2",
         "codedor/filament-translatable-tabs": "^0.1",
-        "codedor/laravel-locale-collection": "^0.0.3",
+        "codedor/laravel-locale-collection": "^0.0",
         "filament/filament": "^3.0",
         "illuminate/contracts": "^10.0",
         "spatie/laravel-package-tools": "^1.12",
