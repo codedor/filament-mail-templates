@@ -4,8 +4,9 @@ namespace Codedor\FilamentMailTemplates;
 
 class MailTemplateFallbacks
 {
-    public null|string $fromName = null;
-    public null|string $fromMail = null;
+    public ?string $fromName = null;
+
+    public ?string $fromMail = null;
 
     public function __construct()
     {
@@ -13,26 +14,26 @@ class MailTemplateFallbacks
         $this->fromMail = config('mail.from.address');
     }
 
-    public function fromName(null|string $fromName): self
+    public function fromName(?string $fromName): self
     {
         $this->fromName = $fromName;
 
         return $this;
     }
 
-    public function getFromName(): null|string
+    public function getFromName(): ?string
     {
         return $this->fromName;
     }
 
-    public function fromMail(null|string $fromMail): self
+    public function fromMail(?string $fromMail): self
     {
         $this->fromMail = $fromMail;
 
         return $this;
     }
 
-    public function getFromMail(): null|string
+    public function getFromMail(): ?string
     {
         return $this->fromMail;
     }
