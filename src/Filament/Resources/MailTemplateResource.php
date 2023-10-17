@@ -2,6 +2,7 @@
 
 namespace Codedor\FilamentMailTemplates\Filament\Resources;
 
+use Codedor\FilamentMailTemplates\Facades\MailTemplateFallbacks;
 use Codedor\FilamentMailTemplates\Filament\Resources\MailTemplateResource\Pages;
 use Codedor\FilamentMailTemplates\Models\MailTemplate;
 use Codedor\FilamentPlaceholderInput\Filament\Forms\Components\PlaceholderInput;
@@ -59,6 +60,20 @@ class MailTemplateResource extends Resource
 
                     Placeholder::make('description')
                         ->content(fn (MailTemplate $record) => $record->description),
+
+                    Grid::make()->schema([
+                        TextInput::make('from_name')
+                            ->helperText(
+                                'If left empty, the sites default name will be used: ' .
+                                MailTemplateFallbacks::getFromName()
+                            ),
+
+                        TextInput::make('from_email')
+                            ->helperText(
+                                'If left empty, the sites default mail will be used: ' .
+                                MailTemplateFallbacks::getFromMail()
+                            ),
+                    ]),
 
                     Repeater::make('to_email')
                         ->helperText('If left empty, the sites default e-mail will be used.')

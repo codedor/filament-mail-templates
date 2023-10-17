@@ -2,6 +2,7 @@
 
 namespace Codedor\FilamentMailTemplates\Mail;
 
+use Codedor\FilamentMailTemplates\Facades\MailTemplateFallbacks;
 use Codedor\FilamentMailTemplates\MailTemplateBuilder;
 use Codedor\FilamentMailTemplates\Models\MailHistory;
 use Codedor\FilamentMailTemplates\Models\MailTemplate;
@@ -43,8 +44,8 @@ class MailableTemplate extends Mailable
         return new Envelope(
             subject: $this->parseVariables($this->template->subject),
             from: new Address(
-                $this->template->from_email ?? config('mail.from.address'),
-                $this->template->from_name ?? config('mail.from.name'),
+                $this->template->from_email ?? MailTemplateFallbacks::getFromMail(),
+                $this->template->from_name ?? MailTemplateFallbacks::getFromName(),
             ),
         );
     }
