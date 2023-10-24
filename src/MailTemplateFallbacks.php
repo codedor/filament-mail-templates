@@ -5,7 +5,9 @@ namespace Codedor\FilamentMailTemplates;
 class MailTemplateFallbacks
 {
     public ?string $fromName = null;
+
     public ?string $fromMail = null;
+
     public ?string $toMail = null;
 
     public function __construct()

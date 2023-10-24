@@ -2,7 +2,6 @@
 
 namespace Codedor\FilamentMailTemplates\Mail;
 
-use Codedor\FilamentMailTemplates\Facades\MailTemplateFallbacks;
 use Codedor\FilamentMailTemplates\MailTemplateBuilder;
 use Codedor\FilamentMailTemplates\Models\MailHistory;
 use Codedor\FilamentMailTemplates\Models\MailTemplate;
