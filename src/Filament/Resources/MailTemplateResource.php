@@ -115,9 +115,13 @@ class MailTemplateResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('identifier'),
+                TextColumn::make('identifier')
+                    ->sortable()
+                    ->searchable(),
 
-                TextColumn::make('description'),
+                TextColumn::make('description')
+                    ->sortable()
+                    ->searchable(),
 
                 LocalesColumn::make('online'),
             ])
@@ -128,7 +132,8 @@ class MailTemplateResource extends Resource
                     ->icon('heroicon-o-eye'),
 
                 Tables\Actions\EditAction::make(),
-            ]);
+            ])
+            ->defaultSort('identifier');
     }
 
     public static function getPages(): array

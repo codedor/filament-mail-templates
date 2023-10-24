@@ -8,10 +8,14 @@ class MailTemplateFallbacks
 
     public ?string $fromMail = null;
 
+    public ?string $toMail = null;
+
     public function __construct()
     {
         $this->fromName = config('mail.from.name');
         $this->fromMail = config('mail.from.address');
+        $this->toMail = config('filament-mail-templates.default.to_email')
+                ?? config('mail.from.address');
     }
 
     public function fromName(?string $fromName): self
@@ -36,5 +40,20 @@ class MailTemplateFallbacks
     public function getFromMail(): ?string
     {
         return $this->fromMail;
+    }
+
+    public function toMail(?string $toMail): self
+    {
+        $this->toMail = $toMail;
+
+        return $this;
+    }
+
+    public function getToMail(): ?array
+    {
+        return $this->toMail ? [
+            'email' => $this->toMail,
+            'type' => 'to',
+        ] : null;
     }
 }

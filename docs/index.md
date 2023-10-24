@@ -96,6 +96,22 @@ php artisan filament-mail-templates:create
 
 This will loop over all your defined mail templates and create them in the database. It is recommended that you add this command in your deployment process, so that the mail templates are always up to date.
 
+## Setting fallback
+
+You'll need to set smoe fallbacks in case we don't send enough data to the mail, you can do this in the AppServiceProvider:
+
+```php
+use Codedor\FilamentMailTemplates\Facades\MailTemplateFallbacks;
+
+try {
+    MailTemplateFallbacks::fromName(setting('site.name'))
+        ->fromMail(setting('site.email'))
+        ->toMail(setting('site.email'));
+} catch (\Throwable $th) {
+    // Temp fix for during deploy/install
+}
+```
+
 ## Sending Mail Templates from the front-end
 
 After filling in all data in the CMS, you can get the mail object in the front-end by using the `mail` method of the model. For example, this contact form:

@@ -3,6 +3,7 @@
 namespace Codedor\FilamentMailTemplates\Models;
 
 use Codedor\FilamentMailTemplates\Facades\MailTemplateCollection;
+use Codedor\FilamentMailTemplates\Facades\MailTemplateFallbacks;
 use Codedor\FilamentMailTemplates\MailTemplateBuilder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
@@ -75,9 +76,7 @@ class MailTemplate extends Model
     public function getAllEmails(): Collection
     {
         return Collection::wrap(
-            $this->to_email
-                ?? config('filament-mail-templates.default.to_email')
-                ?? config('mail.from.address')
+            ($this->to_email ?: null) ?? [MailTemplateFallbacks::getToMail()]
         );
     }
 }
