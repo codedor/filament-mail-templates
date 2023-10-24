@@ -79,4 +79,14 @@ class MailTemplate extends Model
             ($this->to_email ?: null) ?? [MailTemplateFallbacks::getToMail()]
         );
     }
+
+    public function getFromName(): ?string
+    {
+        return $this->from_name ?? MailTemplateFallbacks::getFromName();
+    }
+
+    public function getFromEmail(): ?string
+    {
+        return $this->from_email ?? MailTemplateFallbacks::getFromMail();
+    }
 }

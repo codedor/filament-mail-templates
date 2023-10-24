@@ -44,8 +44,8 @@ class MailableTemplate extends Mailable
         return new Envelope(
             subject: $this->parseVariables($this->template->subject),
             from: new Address(
-                $this->template->from_email ?? MailTemplateFallbacks::getFromMail(),
-                $this->template->from_name ?? MailTemplateFallbacks::getFromName(),
+                $this->template->getFromEmail(),
+                $this->template->getFromName(),
             ),
         );
     }

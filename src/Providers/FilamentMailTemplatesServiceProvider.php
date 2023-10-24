@@ -4,6 +4,7 @@ namespace Codedor\FilamentMailTemplates\Providers;
 
 use Codedor\FilamentMailTemplates\Console\Commands;
 use Codedor\FilamentMailTemplates\MailTemplateCollection;
+use Codedor\FilamentMailTemplates\MailTemplateFallbacks;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -31,6 +32,10 @@ class FilamentMailTemplatesServiceProvider extends PackageServiceProvider
     {
         $this->app->singleton(MailTemplateCollection::class, function () {
             return new MailTemplateCollection;
+        });
+
+        $this->app->singleton(MailTemplateFallbacks::class, function () {
+            return new MailTemplateFallbacks;
         });
     }
 }
