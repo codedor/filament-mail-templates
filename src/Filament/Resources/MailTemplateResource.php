@@ -105,6 +105,7 @@ class MailTemplateResource extends Resource
 
                         PlaceholderInput::make('variables')
                             ->linksWith(["{$locale}.subject", "{$locale}.body"])
+                            ->defaultLink("{$locale}.body")
                             ->copyable(),
                     ]),
                 ]),
