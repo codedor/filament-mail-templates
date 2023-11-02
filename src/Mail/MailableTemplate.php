@@ -6,7 +6,6 @@ use Codedor\FilamentMailTemplates\MailTemplateBuilder;
 use Codedor\FilamentMailTemplates\Models\MailHistory;
 use Codedor\FilamentMailTemplates\Models\MailTemplate;
 use Codedor\FilamentPlaceholderInput\Placeholders;
-use Codedor\FilamentPlaceholderInput\PlaceholderVariable;
 use Illuminate\Bus\Queueable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Mail\Mailable;
