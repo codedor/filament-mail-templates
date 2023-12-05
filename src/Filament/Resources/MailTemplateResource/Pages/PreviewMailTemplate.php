@@ -88,4 +88,9 @@ class PreviewMailTemplate extends Page
 
         return $record;
     }
+
+    public function getSubNavigation(): array
+    {
+        return [];
+    }
 }

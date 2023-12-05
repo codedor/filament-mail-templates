@@ -57,7 +57,7 @@ class MailableTemplate extends Mailable
             view: $this->builder->getView(),
             with: [
                 'item' => $this->item,
-                'body' => new HtmlString($body),
+                'body' => new HtmlString(parse_link_picker_json($body)),
             ],
         );
     }
@@ -88,7 +88,7 @@ class MailableTemplate extends Mailable
         return $mail;
     }
 
-    public function parseVariables(string $content): string
+    public function parseVariables(?string $content): string
     {
         // Don't parse variables if we're previewing, because we have no data
         if ($this->isPreview) {
