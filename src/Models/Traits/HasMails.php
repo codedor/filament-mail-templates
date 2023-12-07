@@ -8,7 +8,7 @@ use Codedor\FilamentMailTemplates\MailTemplateBuilder;
 
 trait HasMails
 {
-    public function mail(string $identifier, string $locale = null): MailableTemplate
+    public function mail(string $identifier, ?string $locale = null): MailableTemplate
     {
         $locale = $locale ?? app()->getLocale();
         $template = MailTemplateCollection::getTemplate($identifier);

@@ -87,7 +87,7 @@ class MailTemplateBuilder
             ->first();
     }
 
-    public function renderPreview(string $locale = null)
+    public function renderPreview(?string $locale = null)
     {
         return (new MailableTemplate(
             $this,
