@@ -9,14 +9,10 @@ parameters:
             count: 1
             path: src/Filament/Resources/MailTemplateResource/Pages/PreviewMailTemplate.php
         -
-            message: "#^Call to an undefined method Codedor\\\\FilamentMailTemplates\\\\Filament\\\\Resources\\\\MailTemplateResource\\\\Pages\\\\PreviewMailTemplate\\:\\:updatedCurrentLocale\\(\\)\\.$#"
-            count: 1
-            path: src/Filament/Resources/MailTemplateResource/Pages/PreviewMailTemplate.php
-        -
             message: "#^Cannot call method getMailTemplate\\(\\) on Illuminate\\\\Database\\\\Eloquent\\\\Model\\|int\\|string\\.$#"
             count: 1
             path: src/Filament/Resources/MailTemplateResource/Pages/PreviewMailTemplate.php
         -
-            message: "#^Call to an undefined method Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:getMailVariables\\(\\)\\.$#"
+            message: "#^Call to an undefined method Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:getPlaceholderVariables\\(\\)\\.$#"
             count: 1
             path: src/Mail/MailableTemplate.php
