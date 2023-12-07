@@ -1,12 +1,14 @@
 <x-filament::page>
     {{ $record->description }}
 
-    <div class="w-full">
-        <select wire:model.live="currentLocale">
-            @foreach ($locales as $locale)
-                <option value="{{ $locale }}">{{ $locale }}</option>
-            @endforeach
-        </select>
+    <div class="w-full flex">
+        <x-filament::input.wrapper>
+            <x-filament::input.select  wire:model.live="currentLocale">
+                @foreach ($locales as $locale)
+                    <option value="{{ $locale }}">{{ $locale }}</option>
+                @endforeach
+            </x-filament::input.select>
+        </x-filament::input.wrapper>
     </div>
 
     <div class="mt-4 w-full border border-lg bg-white" x-data="{
