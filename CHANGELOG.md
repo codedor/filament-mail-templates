@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v1.1.0 - 2024-08-02
+
+### What's Changed
+
+* Bump aglipanci/laravel-pint-action from 2.3.0 to 2.3.1 by @dependabot in https://github.com/codedor/filament-mail-templates/pull/8
+* Bump aglipanci/laravel-pint-action from 2.3.1 to 2.4 by @dependabot in https://github.com/codedor/filament-mail-templates/pull/11
+* Upgrade to L11 by @jyrkidn in https://github.com/codedor/filament-mail-templates/pull/13
+
+### New Contributors
+
+* @jyrkidn made their first contribution in https://github.com/codedor/filament-mail-templates/pull/13
+
+**Full Changelog**: https://github.com/codedor/filament-mail-templates/compare/v1.0.0...v1.1.0
+
 ## v1.0.0 - 2023-12-07
 
 ### What's Changed
