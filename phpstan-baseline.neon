@@ -16,3 +16,7 @@ parameters:
             message: "#^Call to an undefined method Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:getPlaceholderVariables\\(\\)\\.$#"
             count: 1
             path: src/Mail/MailableTemplate.php
+        -
+            identifier: trait.unused
+            count: 1
+            path: src/Models/Traits/HasMails.php
