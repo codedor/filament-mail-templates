@@ -1,0 +1,27 @@
+<?php
+
+return [
+    'identifier' => 'Identifier',
+    'description' => 'Description',
+    'from name' => 'From Name',
+    'from name help :name' => 'If left empty, the sites default name will be used: :name',
+    'from email' => 'From e-mail',
+    'from email help :email' => 'If left empty, the sites default e-mail will be used: :email',
+    'to email' => 'Recipients',
+    'to email help :email' => 'If left empty, the sites default e-mail will be used: :email',
+    'email' => 'E-mail',
+    'type' => 'Type',
+    'type to' => 'To',
+    'type cc' => 'cc',
+    'type bcc' => 'bcc',
+    'subject' => 'Subject',
+    'body' => 'Body',
+    'variables' => 'Variables',
+    'cc email' => 'Recipients (CC)',
+    'bcc email' => 'Recipients (BCC)',
+    'email content' => 'Content of the sent mail',
+    'created at' => 'Sent At',
+    'template' => 'Used Template',
+    'resource type' => 'Mailed Resource Type',
+    'resource id' => 'Mailed Resource ID',
+];

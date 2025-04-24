@@ -1,0 +1,27 @@
+<?php
+
+return [
+    'identifier' => 'Identificatie',
+    'description' => 'Beschrijving',
+    'from name' => 'Van naam',
+    'from name help :name' => 'Als dit leeg is, wordt de standaardnaam van de site gebruikt: :name',
+    'from email' => 'Van e-mailadres',
+    'from email help :email' => 'Als dit leeg is, wordt het standaard e-mailadres van de site gebruikt: :email',
+    'to email' => 'Ontvangers',
+    'to email help :email' => 'Als dit leeg is, wordt het standaard e-mailadres van de site gebruikt: :email',
+    'email' => 'E-mail',
+    'type' => 'Type',
+    'type to' => 'Aan',
+    'type cc' => 'cc',
+    'type bcc' => 'bcc',
+    'subject' => 'Onderwerp',
+    'body' => 'Bericht',
+    'variables' => 'Variabelen',
+    'cc email' => 'Ontvangers (CC)',
+    'bcc email' => 'Ontvangers (BCC)',
+    'email content' => 'Inhoud van de verstuurde e-mail',
+    'created at' => 'Verstuurd op',
+    'template' => 'Gebruikte Template',
+    'resource type' => 'Resource Type',
+    'resource id' => 'Resource ID',
+];
