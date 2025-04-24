@@ -68,7 +68,7 @@ class MailTemplateResource extends Resource
                             ->label(__('filament-mail-templates::admin.from name'))
                             ->helperText(
                                 __('filament-mail-templates::admin.from name help :name', [
-                                    'name' => MailTemplateFallbacks::getFromName()
+                                    'name' => MailTemplateFallbacks::getFromName(),
                                 ])
                             ),
 
@@ -76,7 +76,7 @@ class MailTemplateResource extends Resource
                             ->label(__('filament-mail-templates::admin.from email'))
                             ->helperText(
                                 __('filament-mail-templates::admin.from email help :email', [
-                                    'email' => MailTemplateFallbacks::getFromMail()
+                                    'email' => MailTemplateFallbacks::getFromMail(),
                                 ])
                             ),
                     ]),
@@ -85,7 +85,7 @@ class MailTemplateResource extends Resource
                         ->label(__('filament-mail-templates::admin.to email'))
                         ->helperText(
                             __('filament-mail-templates::admin.to email help :email', [
-                                'email' => MailTemplateFallbacks::getToMail()['email'] ?? ''
+                                'email' => MailTemplateFallbacks::getToMail()['email'] ?? '',
                             ])
                         )
                         ->hidden(fn (MailTemplate $record) => ! $record->getMailTemplate()->hasTargetField())
