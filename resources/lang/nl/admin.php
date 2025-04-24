@@ -24,4 +24,8 @@ return [
     'template' => 'Gebruikte Template',
     'resource type' => 'Resource Type',
     'resource id' => 'Resource ID',
+    'history resource label' => 'E-mail Geschiedenis',
+    'history resource label singular' => 'E-mail Geschiedenis',
+    'template resource label' => 'E-mail Templates',
+    'template resource label singular' => 'E-mail Template',
 ];

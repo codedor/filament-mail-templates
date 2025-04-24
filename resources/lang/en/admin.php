@@ -24,4 +24,8 @@ return [
     'template' => 'Used Template',
     'resource type' => 'Mailed Resource Type',
     'resource id' => 'Mailed Resource ID',
+    'history resource label' => 'Mail Histories',
+    'history resource label singular' => 'Mail History',
+    'template resource label' => 'Mail Templates',
+    'template resource label singular' => 'Mail Template',
 ];

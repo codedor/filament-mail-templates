@@ -134,4 +134,19 @@ class MailHistoryResource extends Resource
             'view' => Pages\ViewMailHistory::route('/{record}/view'),
         ];
     }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('filament-mail-templates::admin.history resource label');
+    }
+
+    public static function getNavigationLabel(): string
+    {
+        return __('filament-mail-templates::admin.history resource label');
+    }
+
+    public static function getModelLabel(): string
+    {
+        return __('filament-mail-templates::admin.history resource singular label');
+    }
 }
