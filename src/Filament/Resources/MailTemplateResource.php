@@ -163,7 +163,6 @@ class MailTemplateResource extends Resource
         ];
     }
 
-
     public static function getPluralModelLabel(): string
     {
         return __('filament-mail-templates::admin.template resource label');
