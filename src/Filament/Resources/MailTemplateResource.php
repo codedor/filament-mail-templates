@@ -120,9 +120,7 @@ class MailTemplateResource extends Resource
                     ->sortable()
                     ->searchable(),
 
-                TextColumn::make('description')
-                    ->sortable()
-                    ->searchable(),
+                TextColumn::make('description'),
 
                 LocalesColumn::make('online'),
             ])
