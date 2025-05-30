@@ -23,7 +23,7 @@ class PreviewMailTemplate extends Page
 
     protected static bool $shouldRegisterNavigation = false;
 
-    protected static string $view = 'filament-mail-templates::filament.pages.preview';
+    protected string $view = 'filament-mail-templates::filament.pages.preview';
 
     public string $preview;
 
