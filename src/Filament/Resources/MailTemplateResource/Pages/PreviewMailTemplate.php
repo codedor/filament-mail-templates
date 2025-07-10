@@ -5,9 +5,9 @@ namespace Codedor\FilamentMailTemplates\Filament\Resources\MailTemplateResource\
 use Codedor\FilamentMailTemplates\Filament\Resources\MailTemplateResource;
 use Codedor\FilamentMailTemplates\Models\MailTemplate;
 use Codedor\LocaleCollection\Facades\LocaleCollection;
-use Filament\Pages\Page;
 use Filament\Panel;
 use Filament\Resources\Pages\Concerns\InteractsWithRecord;
+use Filament\Resources\Pages\Page;
 use Filament\Resources\Pages\PageRegistration;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Database\Eloquent\Model;
