@@ -88,7 +88,7 @@ class MailableTemplate extends Mailable
         return $mail;
     }
 
-    public function parseVariables(?string $content): string
+    public function parseVariables(?string $content): ?string
     {
         // Don't parse variables if we're previewing, because we have no data
         if ($this->isPreview) {
