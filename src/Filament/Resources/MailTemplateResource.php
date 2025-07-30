@@ -138,8 +138,7 @@ class MailTemplateResource extends Resource
 
                 TextColumn::make('description')
                     ->label(__('filament-mail-templates::admin.description'))
-                    ->sortable()
-                    ->searchable(),
+                    ->sortable(),
 
                 LocalesColumn::make('online'),
             ])
