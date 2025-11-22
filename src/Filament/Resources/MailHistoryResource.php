@@ -44,21 +44,21 @@ class MailHistoryResource extends Resource
             ->components([
                 \Filament\Schemas\Components\Section::make('Recipients')->schema([
                     TextEntry::make('to_email')
-                        ->label('Recipients')
+                        ->label(__('filament-mail-templates::admin.to email'))
                         ->state(fn ($record) => implode(', ', $record->to_emails)),
 
                     TextEntry::make('cc_email')
-                        ->label('Recipients (CC)')
+                        ->label(__('filament-mail-templates::admin.cc email'))
                         ->state(fn ($record) => implode(', ', $record->cc_emails)),
 
                     TextEntry::make('bcc_email')
-                        ->label('Recipients (BCC)')
+                        ->label(__('filament-mail-templates::admin.bcc email'))
                         ->state(fn ($record) => implode(', ', $record->bcc_emails)),
                 ]),
 
                 TextEntry::make('preview')
                     ->columnSpan(['lg' => 2])
-                    ->label('Content of the sent mail')
+                    ->label(__('filament-mail-templates::admin.email content'))
                     ->state(fn ($record) => view('filament-mail-templates::filament.forms.preview-column', [
                         'record' => $record,
                     ])),
@@ -66,18 +66,19 @@ class MailHistoryResource extends Resource
                 \Filament\Schemas\Components\Section::make('Debug data')->schema([
                     \Filament\Schemas\Components\Grid::make()->schema([
                         TextEntry::make('created_at')
-                            ->label('Sent at')
+                            ->label(__('filament-mail-templates::admin.created at'))
                             ->state(fn ($record) => $record->created_at->format('Y-m-d H:i:s')),
 
                         TextEntry::make('template')
-                            ->label('Used template')
+                            ->label(__('filament-mail-templates::admin.template'))
                             ->state(fn ($record) => $record->template?->identifier),
 
                         TextEntry::make('mailed_resource_type')
+                            ->label(__('filament-mail-templates::admin.resource type'))
                             ->state(fn ($record) => $record->mailed_resource_type),
 
                         TextEntry::make('mailed_resource_id')
-                            ->label('Mailed resource ID')
+                            ->label(__('filament-mail-templates::admin.resource id'))
                             ->state(fn ($record) => $record->mailed_resource_id),
                     ]),
                 ]),
@@ -89,22 +90,23 @@ class MailHistoryResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('created_at')
-                    ->label('Sent at')
+                    ->label(__('filament-mail-templates::admin.created at'))
                     ->sortable(),
 
                 TextColumn::make('template')
-                    ->label('Sent template')
+                    ->label(__('filament-mail-templates::admin.template'))
                     ->getStateUsing(fn ($record) => $record->template?->identifier)
                     ->sortable(),
 
                 TextColumn::make('to_emails')
-                    ->label('Recipients')
+                    ->label(__('filament-mail-templates::admin.to email'))
                     ->getStateUsing(fn ($record) => $record->to_emails)
                     ->html()
                     ->searchable(),
             ])
             ->filters([
-                Filter::make('to_email'),
+                Filter::make('to_email')
+                    ->label(__('filament-mail-templates::admin.to email')),
             ])
             ->actions([
                 \Filament\Actions\ViewAction::make(),
@@ -126,5 +128,20 @@ class MailHistoryResource extends Resource
             'index' => Pages\ListMailHistories::route('/'),
             'view' => Pages\ViewMailHistory::route('/{record}/view'),
         ];
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('filament-mail-templates::admin.history resource label');
+    }
+
+    public static function getNavigationLabel(): string
+    {
+        return __('filament-mail-templates::admin.history resource label');
+    }
+
+    public static function getModelLabel(): string
+    {
+        return __('filament-mail-templates::admin.history resource singular label');
     }
 }

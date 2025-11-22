@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v1.3.0 - 2025-11-20
+
+### What's Changed
+
+* Bump aglipanci/laravel-pint-action from 2.5 to 2.6 by @dependabot[bot] in https://github.com/codedor/filament-mail-templates/pull/23
+* Bump actions/checkout from 4 to 5 by @dependabot[bot] in https://github.com/codedor/filament-mail-templates/pull/24
+* Bump stefanzweifel/git-auto-commit-action from 5 to 7 by @dependabot[bot] in https://github.com/codedor/filament-mail-templates/pull/25
+* Add translatable strings by @jyrkidn in https://github.com/codedor/filament-mail-templates/pull/19
+
+**Full Changelog**: https://github.com/codedor/filament-mail-templates/compare/v1.2.1...v1.3.0
+
 ## v1.2.1 - 2025-05-14
 
 ### What's Changed

@@ -53,40 +53,52 @@ class MailTemplateResource extends Resource
                 ->icon(false)
                 ->defaultFields([
                     TextEntry::make('identifier')
+                        ->label(__('filament-mail-templates::admin.identifier'))
                         ->state(fn (MailTemplate $record) => $record->identifier),
 
                     TextEntry::make('description')
+                        ->label(__('filament-mail-templates::admin.description'))
                         ->state(fn (MailTemplate $record) => $record->description),
 
                     \Filament\Schemas\Components\Grid::make()->schema([
                         TextInput::make('from_name')
+                            ->label(__('filament-mail-templates::admin.from name'))
                             ->helperText(
-                                'If left empty, the sites default name will be used: ' .
-                                MailTemplateFallbacks::getFromName()
+                                __('filament-mail-templates::admin.from name help :name', [
+                                    'name' => MailTemplateFallbacks::getFromName(),
+                                ])
                             ),
 
                         TextInput::make('from_email')
+                            ->label(__('filament-mail-templates::admin.from email'))
                             ->helperText(
-                                'If left empty, the sites default mail will be used: ' .
-                                MailTemplateFallbacks::getFromMail()
+                                __('filament-mail-templates::admin.from email help :email', [
+                                    'email' => MailTemplateFallbacks::getFromMail(),
+                                ])
                             ),
                     ]),
 
                     Repeater::make('to_email')
-                        ->helperText('If left empty, the sites default e-mail will be used.')
-                        ->label('Target e-mails')
+                        ->label(__('filament-mail-templates::admin.to email'))
+                        ->helperText(
+                            __('filament-mail-templates::admin.to email help :email', [
+                                'email' => MailTemplateFallbacks::getToMail()['email'] ?? '',
+                            ])
+                        )
                         ->hidden(fn (MailTemplate $record) => ! $record->getMailTemplate()->hasTargetField())
                         ->schema([
                             \Filament\Schemas\Components\Grid::make()->schema([
                                 TextInput::make('email')
+                                    ->label(__('filament-mail-templates::admin.email'))
                                     ->required(),
 
                                 Select::make('type')
+                                    ->label(__('filament-mail-templates::admin.type'))
                                     ->required()
                                     ->options([
-                                        'to' => 'Normal',
-                                        'cc' => 'CC',
-                                        'bcc' => 'BCC',
+                                        'to' => __('filament-mail-templates::admin.type to'),
+                                        'cc' => __('filament-mail-templates::admin.type cc'),
+                                        'bcc' => __('filament-mail-templates::admin.type bcc'),
                                     ]),
                             ]),
                         ]),
@@ -96,11 +108,15 @@ class MailTemplateResource extends Resource
                         \Filament\Schemas\Components\Grid::make(1)
                             ->columnSpan(['lg' => 2])
                             ->schema([
-                                TextInput::make('subject'),
-                                RichEditor::make('body'),
+                                TextInput::make('subject')
+                                    ->label(__('filament-mail-templates::admin.subject')),
+
+                                RichEditor::make('body')
+                                    ->label(__('filament-mail-templates::admin.body')),
                             ]),
 
                         PlaceholderInput::make('variables')
+                            ->label(__('filament-mail-templates::admin.variables'))
                             ->linksWith(["{$locale}.subject", "{$locale}.body"])
                             ->defaultLink("{$locale}.body")
                             ->copyable(),
@@ -114,10 +130,12 @@ class MailTemplateResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('identifier')
+                    ->label(__('filament-mail-templates::admin.identifier'))
                     ->sortable()
                     ->searchable(),
 
-                TextColumn::make('description'),
+                TextColumn::make('description')
+                    ->label(__('filament-mail-templates::admin.description')),
 
                 LocalesColumn::make('online'),
             ])
@@ -139,5 +157,20 @@ class MailTemplateResource extends Resource
             'preview' => Pages\PreviewMailTemplate::route('/{record}/preview'),
             'edit' => Pages\EditMailTemplate::route('/{record}/edit'),
         ];
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('filament-mail-templates::admin.template resource label');
+    }
+
+    public static function getNavigationLabel(): string
+    {
+        return __('filament-mail-templates::admin.template resource label');
+    }
+
+    public static function getModelLabel(): string
+    {
+        return __('filament-mail-templates::admin.template resource singular label');
     }
 }
