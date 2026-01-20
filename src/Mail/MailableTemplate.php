@@ -1,11 +1,11 @@
 <?php
 
-namespace Codedor\FilamentMailTemplates\Mail;
+namespace Wotz\FilamentMailTemplates\Mail;
 
-use Codedor\FilamentMailTemplates\MailTemplateBuilder;
-use Codedor\FilamentMailTemplates\Models\MailHistory;
-use Codedor\FilamentMailTemplates\Models\MailTemplate;
-use Codedor\FilamentPlaceholderInput\Placeholders;
+use Wotz\FilamentMailTemplates\MailTemplateBuilder;
+use Wotz\FilamentMailTemplates\Models\MailHistory;
+use Wotz\FilamentMailTemplates\Models\MailTemplate;
+use Wotz\FilamentPlaceholderInput\Placeholders;
 use Illuminate\Bus\Queueable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Mail\Mailable;

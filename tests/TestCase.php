@@ -1,8 +1,8 @@
 <?php
 
-namespace Codedor\FilamentMailTemplates\Tests;
+namespace Wotz\FilamentMailTemplates\Tests;
 
-use Codedor\FilamentMailTemplates\Providers\FilamentMailTemplatesServiceProvider;
+use Wotz\FilamentMailTemplates\Providers\FilamentMailTemplatesServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
 
@@ -13,7 +13,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Codedor\\FilamentMailTemplates\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
+            fn (string $modelName) => 'Wotz\\FilamentMailTemplates\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
         );
     }
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace Codedor\FilamentMailTemplates\Filament\Resources\MailHistoryResource\Pages;
+namespace Wotz\FilamentMailTemplates\Filament\Resources\MailHistoryResource\Pages;
 
-use Codedor\FilamentMailTemplates\Filament\Resources\MailHistoryResource;
+use Wotz\FilamentMailTemplates\Filament\Resources\MailHistoryResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ViewRecord;
 

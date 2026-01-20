@@ -1,9 +1,9 @@
 <?php
 
-namespace Codedor\FilamentMailTemplates\Filament\Resources;
+namespace Wotz\FilamentMailTemplates\Filament\Resources;
 
-use Codedor\FilamentMailTemplates\Filament\Resources\MailHistoryResource\Pages;
-use Codedor\FilamentMailTemplates\Models\MailHistory;
+use Wotz\FilamentMailTemplates\Filament\Resources\MailHistoryResource\Pages;
+use Wotz\FilamentMailTemplates\Models\MailHistory;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Resources\Resource;
 use Filament\Tables\Columns\TextColumn;

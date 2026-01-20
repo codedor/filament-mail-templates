@@ -1,10 +1,10 @@
 <?php
 
-namespace Codedor\FilamentMailTemplates\Filament\Resources\MailTemplateResource\Pages;
+namespace Wotz\FilamentMailTemplates\Filament\Resources\MailTemplateResource\Pages;
 
-use Codedor\FilamentMailTemplates\Filament\Resources\MailTemplateResource;
-use Codedor\FilamentMailTemplates\Models\MailTemplate;
-use Codedor\LocaleCollection\Facades\LocaleCollection;
+use Wotz\FilamentMailTemplates\Filament\Resources\MailTemplateResource;
+use Wotz\FilamentMailTemplates\Models\MailTemplate;
+use Wotz\LocaleCollection\Facades\LocaleCollection;
 use Filament\Panel;
 use Filament\Resources\Pages\Concerns\InteractsWithRecord;
 use Filament\Resources\Pages\Page;

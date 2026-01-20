@@ -1,10 +1,10 @@
 <?php
 
-namespace Codedor\FilamentMailTemplates\Models;
+namespace Wotz\FilamentMailTemplates\Models;
 
-use Codedor\FilamentMailTemplates\Facades\MailTemplateCollection;
-use Codedor\FilamentMailTemplates\Facades\MailTemplateFallbacks;
-use Codedor\FilamentMailTemplates\MailTemplateBuilder;
+use Wotz\FilamentMailTemplates\Facades\MailTemplateCollection;
+use Wotz\FilamentMailTemplates\Facades\MailTemplateFallbacks;
+use Wotz\FilamentMailTemplates\MailTemplateBuilder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Spatie\Translatable\HasTranslations;

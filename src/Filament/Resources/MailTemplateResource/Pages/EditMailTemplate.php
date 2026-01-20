@@ -1,9 +1,9 @@
 <?php
 
-namespace Codedor\FilamentMailTemplates\Filament\Resources\MailTemplateResource\Pages;
+namespace Wotz\FilamentMailTemplates\Filament\Resources\MailTemplateResource\Pages;
 
-use Codedor\FilamentMailTemplates\Filament\Resources\MailTemplateResource;
-use Codedor\TranslatableTabs\Resources\Traits\HasTranslations;
+use Wotz\FilamentMailTemplates\Filament\Resources\MailTemplateResource;
+use Wotz\TranslatableTabs\Resources\Traits\HasTranslations;
 use Filament\Resources\Pages\EditRecord;
 
 class EditMailTemplate extends EditRecord

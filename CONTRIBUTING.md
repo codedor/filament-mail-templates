@@ -45,8 +45,6 @@ Some things to consider before submitting an issue
 
 ## Coding style
 
-See our [guidelines](https://guidelines.codedor.be/coding-standards/php).
-
 ### Laravel Pint
 
 Don't worry if your code styling is not perfect! Each of our packages have a [Laravel Pint](https://github.com/laravel/pint) Github Action will automatically merge any style fixes into the package when you commit changes to a pull request.
