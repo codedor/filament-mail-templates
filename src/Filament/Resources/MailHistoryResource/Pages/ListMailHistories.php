@@ -1,9 +1,9 @@
 <?php
 
-namespace Codedor\FilamentMailTemplates\Filament\Resources\MailHistoryResource\Pages;
+namespace Wotz\FilamentMailTemplates\Filament\Resources\MailHistoryResource\Pages;
 
-use Codedor\FilamentMailTemplates\Filament\Resources\MailHistoryResource;
 use Filament\Resources\Pages\ListRecords;
+use Wotz\FilamentMailTemplates\Filament\Resources\MailHistoryResource;
 
 class ListMailHistories extends ListRecords
 {

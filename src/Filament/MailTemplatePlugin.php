@@ -1,11 +1,11 @@
 <?php
 
-namespace Codedor\FilamentMailTemplates\Filament;
+namespace Wotz\FilamentMailTemplates\Filament;
 
-use Codedor\FilamentMailTemplates\Filament\Resources\MailHistoryResource;
-use Codedor\FilamentMailTemplates\Filament\Resources\MailTemplateResource;
 use Filament\Contracts\Plugin;
 use Filament\Panel;
+use Wotz\FilamentMailTemplates\Filament\Resources\MailHistoryResource;
+use Wotz\FilamentMailTemplates\Filament\Resources\MailTemplateResource;
 
 class MailTemplatePlugin implements Plugin
 {

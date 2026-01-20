@@ -1,9 +1,9 @@
 <?php
 
-namespace Codedor\FilamentMailTemplates\Filament\Resources\MailTemplateResource\Pages;
+namespace Wotz\FilamentMailTemplates\Filament\Resources\MailTemplateResource\Pages;
 
-use Codedor\FilamentMailTemplates\Filament\Resources\MailTemplateResource;
 use Filament\Resources\Pages\ListRecords;
+use Wotz\FilamentMailTemplates\Filament\Resources\MailTemplateResource;
 
 class ListMailTemplates extends ListRecords
 {

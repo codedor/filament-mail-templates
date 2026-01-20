@@ -1,13 +1,7 @@
 <?php
 
-namespace Codedor\FilamentMailTemplates\Filament\Resources;
+namespace Wotz\FilamentMailTemplates\Filament\Resources;
 
-use Codedor\FilamentMailTemplates\Facades\MailTemplateFallbacks;
-use Codedor\FilamentMailTemplates\Filament\Resources\MailTemplateResource\Pages;
-use Codedor\FilamentMailTemplates\Models\MailTemplate;
-use Codedor\FilamentPlaceholderInput\Filament\Forms\Components\PlaceholderInput;
-use Codedor\TranslatableTabs\Forms\TranslatableTabs;
-use Codedor\TranslatableTabs\Tables\LocalesColumn;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
@@ -16,6 +10,12 @@ use Filament\Infolists\Components\TextEntry;
 use Filament\Resources\Resource;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Wotz\FilamentMailTemplates\Facades\MailTemplateFallbacks;
+use Wotz\FilamentMailTemplates\Filament\Resources\MailTemplateResource\Pages;
+use Wotz\FilamentMailTemplates\Models\MailTemplate;
+use Wotz\FilamentPlaceholderInput\Filament\Forms\Components\PlaceholderInput;
+use Wotz\TranslatableTabs\Forms\TranslatableTabs;
+use Wotz\TranslatableTabs\Tables\LocalesColumn;
 
 class MailTemplateResource extends Resource
 {

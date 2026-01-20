@@ -1,9 +1,9 @@
 <?php
 
-namespace Codedor\FilamentMailTemplates;
+namespace Wotz\FilamentMailTemplates;
 
-use Codedor\FilamentMailTemplates\Mail\MailableTemplate;
-use Codedor\FilamentMailTemplates\Models\MailTemplate;
+use Wotz\FilamentMailTemplates\Mail\MailableTemplate;
+use Wotz\FilamentMailTemplates\Models\MailTemplate;
 
 class MailTemplateBuilder
 {

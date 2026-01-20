@@ -7,7 +7,7 @@ A package to quickly create customizable mail templates in Filament
 You can install the package via composer:
 
 ```bash
-composer require codedor/filament-mail-templates
+composer require wotz/filament-mail-templates
 ```
 
 You can publish the config file with:

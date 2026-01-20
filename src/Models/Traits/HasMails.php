@@ -1,10 +1,10 @@
 <?php
 
-namespace Codedor\FilamentMailTemplates\Models\Traits;
+namespace Wotz\FilamentMailTemplates\Models\Traits;
 
-use Codedor\FilamentMailTemplates\Facades\MailTemplateCollection;
-use Codedor\FilamentMailTemplates\Mail\MailableTemplate;
-use Codedor\FilamentMailTemplates\MailTemplateBuilder;
+use Wotz\FilamentMailTemplates\Facades\MailTemplateCollection;
+use Wotz\FilamentMailTemplates\Mail\MailableTemplate;
+use Wotz\FilamentMailTemplates\MailTemplateBuilder;
 
 trait HasMails
 {
