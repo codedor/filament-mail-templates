@@ -1,12 +1,12 @@
 <?php
 
-namespace Codedor\FilamentMailTemplates\Providers;
+namespace Wotz\FilamentMailTemplates\Providers;
 
-use Codedor\FilamentMailTemplates\Console\Commands;
-use Codedor\FilamentMailTemplates\MailTemplateCollection;
-use Codedor\FilamentMailTemplates\MailTemplateFallbacks;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Wotz\FilamentMailTemplates\Console\Commands;
+use Wotz\FilamentMailTemplates\MailTemplateCollection;
+use Wotz\FilamentMailTemplates\MailTemplateFallbacks;
 
 class FilamentMailTemplatesServiceProvider extends PackageServiceProvider
 {

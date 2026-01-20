@@ -1,11 +1,11 @@
 <?php
 
-namespace Codedor\FilamentMailTemplates\Console\Commands;
+namespace Wotz\FilamentMailTemplates\Console\Commands;
 
-use Codedor\FilamentMailTemplates\Facades\MailTemplateCollection;
-use Codedor\FilamentMailTemplates\MailTemplateBuilder;
-use Codedor\FilamentMailTemplates\Models\MailTemplate;
 use Illuminate\Console\Command;
+use Wotz\FilamentMailTemplates\Facades\MailTemplateCollection;
+use Wotz\FilamentMailTemplates\MailTemplateBuilder;
+use Wotz\FilamentMailTemplates\Models\MailTemplate;
 
 class CreateMailTemplates extends Command
 {

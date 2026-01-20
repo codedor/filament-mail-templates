@@ -1,6 +1,6 @@
 <?php
 
-namespace Codedor\FilamentMailTemplates;
+namespace Wotz\FilamentMailTemplates;
 
 class MailTemplateFallbacks
 {

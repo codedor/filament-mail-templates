@@ -1,18 +1,14 @@
 <?php
 
-namespace Codedor\FilamentMailTemplates\Filament\Resources;
+namespace Wotz\FilamentMailTemplates\Filament\Resources;
 
-use Codedor\FilamentMailTemplates\Filament\Resources\MailHistoryResource\Pages;
-use Codedor\FilamentMailTemplates\Models\MailHistory;
-use Filament\Forms\Components\Grid;
-use Filament\Forms\Components\Placeholder;
-use Filament\Forms\Components\Section;
-use Filament\Forms\Form;
+use Filament\Infolists\Components\TextEntry;
 use Filament\Resources\Resource;
-use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\Filter;
 use Filament\Tables\Table;
+use Wotz\FilamentMailTemplates\Filament\Resources\MailHistoryResource\Pages;
+use Wotz\FilamentMailTemplates\Models\MailHistory;
 
 class MailHistoryResource extends Resource
 {
@@ -42,49 +38,48 @@ class MailHistoryResource extends Resource
         );
     }
 
-    public static function form(Form $form): Form
+    public static function form(\Filament\Schemas\Schema $schema): \Filament\Schemas\Schema
     {
-        return $form
-            ->schema([
-                Section::make('Recipients')->schema([
-                    Placeholder::make('to_email')
+        return $schema
+            ->components([
+                \Filament\Schemas\Components\Section::make('Recipients')->schema([
+                    TextEntry::make('to_email')
                         ->label(__('filament-mail-templates::admin.to email'))
-                        ->content(fn ($record) => implode(', ', $record->to_emails)),
+                        ->state(fn ($record) => implode(', ', $record->to_emails)),
 
-                    Placeholder::make('cc_email')
+                    TextEntry::make('cc_email')
                         ->label(__('filament-mail-templates::admin.cc email'))
-                        ->content(fn ($record) => implode(', ', $record->cc_emails)),
+                        ->state(fn ($record) => implode(', ', $record->cc_emails)),
 
-                    Placeholder::make('bcc_email')
+                    TextEntry::make('bcc_email')
                         ->label(__('filament-mail-templates::admin.bcc email'))
-                        ->content(fn ($record) => implode(', ', $record->bcc_emails)),
+                        ->state(fn ($record) => implode(', ', $record->bcc_emails)),
                 ]),
 
-                Placeholder::make('preview')
+                TextEntry::make('preview')
                     ->columnSpan(['lg' => 2])
                     ->label(__('filament-mail-templates::admin.email content'))
-                    ->content(fn ($record) => view('filament-mail-templates::filament.forms.preview-column', [
+                    ->state(fn ($record) => view('filament-mail-templates::filament.forms.preview-column', [
                         'record' => $record,
                     ])),
 
-                Section::make('Debug data')->schema([
-                    Grid::make()->schema([
-                        Placeholder::make('created_at')
+                \Filament\Schemas\Components\Section::make('Debug data')->schema([
+                    \Filament\Schemas\Components\Grid::make()->schema([
+                        TextEntry::make('created_at')
                             ->label(__('filament-mail-templates::admin.created at'))
-                            ->label('Sent at')
-                            ->content(fn ($record) => $record->created_at->format('Y-m-d H:i:s')),
+                            ->state(fn ($record) => $record->created_at->format('Y-m-d H:i:s')),
 
-                        Placeholder::make('template')
+                        TextEntry::make('template')
                             ->label(__('filament-mail-templates::admin.template'))
-                            ->content(fn ($record) => $record->template?->identifier),
+                            ->state(fn ($record) => $record->template?->identifier),
 
-                        Placeholder::make('mailed_resource_type')
+                        TextEntry::make('mailed_resource_type')
                             ->label(__('filament-mail-templates::admin.resource type'))
-                            ->content(fn ($record) => $record->mailed_resource_type),
+                            ->state(fn ($record) => $record->mailed_resource_type),
 
-                        Placeholder::make('mailed_resource_id')
+                        TextEntry::make('mailed_resource_id')
                             ->label(__('filament-mail-templates::admin.resource id'))
-                            ->content(fn ($record) => $record->mailed_resource_id),
+                            ->state(fn ($record) => $record->mailed_resource_id),
                     ]),
                 ]),
             ]);
@@ -114,10 +109,10 @@ class MailHistoryResource extends Resource
                     ->label(__('filament-mail-templates::admin.to email')),
             ])
             ->actions([
-                Tables\Actions\ViewAction::make(),
+                \Filament\Actions\ViewAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                \Filament\Actions\DeleteBulkAction::make(),
             ])
             ->defaultSort('created_at', 'desc');
     }

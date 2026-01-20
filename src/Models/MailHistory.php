@@ -1,6 +1,6 @@
 <?php
 
-namespace Codedor\FilamentMailTemplates\Models;
+namespace Wotz\FilamentMailTemplates\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

@@ -1,19 +1,19 @@
 <?php
 
-namespace Codedor\FilamentMailTemplates\Filament\Resources\MailTemplateResource\Pages;
+namespace Wotz\FilamentMailTemplates\Filament\Resources\MailTemplateResource\Pages;
 
-use Codedor\FilamentMailTemplates\Filament\Resources\MailTemplateResource;
-use Codedor\FilamentMailTemplates\Models\MailTemplate;
-use Codedor\LocaleCollection\Facades\LocaleCollection;
-use Filament\Pages\Page;
 use Filament\Panel;
 use Filament\Resources\Pages\Concerns\InteractsWithRecord;
+use Filament\Resources\Pages\Page;
 use Filament\Resources\Pages\PageRegistration;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Route as FacadesRoute;
+use Wotz\FilamentMailTemplates\Filament\Resources\MailTemplateResource;
+use Wotz\FilamentMailTemplates\Models\MailTemplate;
+use Wotz\LocaleCollection\Facades\LocaleCollection;
 
 class PreviewMailTemplate extends Page
 {
@@ -23,7 +23,7 @@ class PreviewMailTemplate extends Page
 
     protected static bool $shouldRegisterNavigation = false;
 
-    protected static string $view = 'filament-mail-templates::filament.pages.preview';
+    protected string $view = 'filament-mail-templates::filament.pages.preview';
 
     public string $preview;
 

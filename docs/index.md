@@ -7,17 +7,17 @@ A package to quickly create customizable mail templates in Filament
 You can install the package via composer:
 
 ```bash
-composer require codedor/filament-mail-templates
+composer require wotz/filament-mail-templates
 ```
 
 ## Defining Mail Templates
 
-When adding mail templates there are a few things to do, first you'll need to add the `Codedor\FilamentMailTemplates\Models\Traits\HasMails` trait models that you want to have mail templates.
+When adding mail templates there are a few things to do, first you'll need to add the `Wotz\FilamentMailTemplates\Models\Traits\HasMails` trait models that you want to have mail templates.
 
 ```php
 namespace App\Models;
 
-use Codedor\FilamentMailTemplates\Models\Traits\HasMails;
+use Wotz\FilamentMailTemplates\Models\Traits\HasMails;
 use Illuminate\Database\Eloquent\Model;
 
 class Inquiry extends Model
@@ -26,13 +26,13 @@ class Inquiry extends Model
 }
 ```
 
-After doing this, you'll also need to define what fields you want to be able to use in the mail template. To do this you'll need to define the fields in the `getPlaceholderVariables` method of the model. This method should return an array of `Codedor\FilamentPlaceholderInput\PlaceholderVariable` objects.
+After doing this, you'll also need to define what fields you want to be able to use in the mail template. To do this you'll need to define the fields in the `getPlaceholderVariables` method of the model. This method should return an array of `Wotz\FilamentPlaceholderInput\PlaceholderVariable` objects.
 
 ```php
 namespace App\Models;
 
-use Codedor\FilamentMailTemplates\Models\Traits\HasMails;
-use Codedor\FilamentPlaceholderInput\PlaceholderVariable;
+use Wotz\FilamentMailTemplates\Models\Traits\HasMails;
+use Wotz\FilamentPlaceholderInput\PlaceholderVariable;
 use Illuminate\Database\Eloquent\Model;
 
 class Inquiry extends Model
@@ -101,7 +101,7 @@ This will loop over all your defined mail templates and create them in the datab
 You'll need to set smoe fallbacks in case we don't send enough data to the mail, you can do this in the AppServiceProvider:
 
 ```php
-use Codedor\FilamentMailTemplates\Facades\MailTemplateFallbacks;
+use Wotz\FilamentMailTemplates\Facades\MailTemplateFallbacks;
 
 try {
     MailTemplateFallbacks::fromName(setting('site.name'))

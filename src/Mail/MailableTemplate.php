@@ -1,11 +1,7 @@
 <?php
 
-namespace Codedor\FilamentMailTemplates\Mail;
+namespace Wotz\FilamentMailTemplates\Mail;
 
-use Codedor\FilamentMailTemplates\MailTemplateBuilder;
-use Codedor\FilamentMailTemplates\Models\MailHistory;
-use Codedor\FilamentMailTemplates\Models\MailTemplate;
-use Codedor\FilamentPlaceholderInput\Placeholders;
 use Illuminate\Bus\Queueable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Mail\Mailable;
@@ -14,6 +10,10 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\HtmlString;
+use Wotz\FilamentMailTemplates\MailTemplateBuilder;
+use Wotz\FilamentMailTemplates\Models\MailHistory;
+use Wotz\FilamentMailTemplates\Models\MailTemplate;
+use Wotz\FilamentPlaceholderInput\Placeholders;
 
 class MailableTemplate extends Mailable
 {
@@ -88,7 +88,7 @@ class MailableTemplate extends Mailable
         return $mail;
     }
 
-    public function parseVariables(?string $content): string
+    public function parseVariables(?string $content): ?string
     {
         // Don't parse variables if we're previewing, because we have no data
         if ($this->isPreview) {
