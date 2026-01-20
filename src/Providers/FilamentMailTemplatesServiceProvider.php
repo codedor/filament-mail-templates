@@ -2,11 +2,11 @@
 
 namespace Wotz\FilamentMailTemplates\Providers;
 
+use Spatie\LaravelPackageTools\Package;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Wotz\FilamentMailTemplates\Console\Commands;
 use Wotz\FilamentMailTemplates\MailTemplateCollection;
 use Wotz\FilamentMailTemplates\MailTemplateFallbacks;
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class FilamentMailTemplatesServiceProvider extends PackageServiceProvider
 {

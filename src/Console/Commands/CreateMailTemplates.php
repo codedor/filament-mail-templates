@@ -2,10 +2,10 @@
 
 namespace Wotz\FilamentMailTemplates\Console\Commands;
 
+use Illuminate\Console\Command;
 use Wotz\FilamentMailTemplates\Facades\MailTemplateCollection;
 use Wotz\FilamentMailTemplates\MailTemplateBuilder;
 use Wotz\FilamentMailTemplates\Models\MailTemplate;
-use Illuminate\Console\Command;
 
 class CreateMailTemplates extends Command
 {

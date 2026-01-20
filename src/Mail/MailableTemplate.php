@@ -2,10 +2,6 @@
 
 namespace Wotz\FilamentMailTemplates\Mail;
 
-use Wotz\FilamentMailTemplates\MailTemplateBuilder;
-use Wotz\FilamentMailTemplates\Models\MailHistory;
-use Wotz\FilamentMailTemplates\Models\MailTemplate;
-use Wotz\FilamentPlaceholderInput\Placeholders;
 use Illuminate\Bus\Queueable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Mail\Mailable;
@@ -14,6 +10,10 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\HtmlString;
+use Wotz\FilamentMailTemplates\MailTemplateBuilder;
+use Wotz\FilamentMailTemplates\Models\MailHistory;
+use Wotz\FilamentMailTemplates\Models\MailTemplate;
+use Wotz\FilamentPlaceholderInput\Placeholders;
 
 class MailableTemplate extends Mailable
 {

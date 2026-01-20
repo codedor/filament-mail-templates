@@ -2,9 +2,6 @@
 
 namespace Wotz\FilamentMailTemplates\Filament\Resources\MailTemplateResource\Pages;
 
-use Wotz\FilamentMailTemplates\Filament\Resources\MailTemplateResource;
-use Wotz\FilamentMailTemplates\Models\MailTemplate;
-use Wotz\LocaleCollection\Facades\LocaleCollection;
 use Filament\Panel;
 use Filament\Resources\Pages\Concerns\InteractsWithRecord;
 use Filament\Resources\Pages\Page;
@@ -14,6 +11,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Route as FacadesRoute;
+use Wotz\FilamentMailTemplates\Filament\Resources\MailTemplateResource;
+use Wotz\FilamentMailTemplates\Models\MailTemplate;
+use Wotz\LocaleCollection\Facades\LocaleCollection;
 
 class PreviewMailTemplate extends Page
 {

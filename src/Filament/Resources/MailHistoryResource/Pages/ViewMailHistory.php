@@ -2,9 +2,9 @@
 
 namespace Wotz\FilamentMailTemplates\Filament\Resources\MailHistoryResource\Pages;
 
-use Wotz\FilamentMailTemplates\Filament\Resources\MailHistoryResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ViewRecord;
+use Wotz\FilamentMailTemplates\Filament\Resources\MailHistoryResource;
 
 class ViewMailHistory extends ViewRecord
 {

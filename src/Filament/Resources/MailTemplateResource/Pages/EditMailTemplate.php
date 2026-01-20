@@ -2,9 +2,9 @@
 
 namespace Wotz\FilamentMailTemplates\Filament\Resources\MailTemplateResource\Pages;
 
+use Filament\Resources\Pages\EditRecord;
 use Wotz\FilamentMailTemplates\Filament\Resources\MailTemplateResource;
 use Wotz\TranslatableTabs\Resources\Traits\HasTranslations;
-use Filament\Resources\Pages\EditRecord;
 
 class EditMailTemplate extends EditRecord
 {

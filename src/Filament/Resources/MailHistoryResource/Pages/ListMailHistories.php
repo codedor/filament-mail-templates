@@ -2,8 +2,8 @@
 
 namespace Wotz\FilamentMailTemplates\Filament\Resources\MailHistoryResource\Pages;
 
-use Wotz\FilamentMailTemplates\Filament\Resources\MailHistoryResource;
 use Filament\Resources\Pages\ListRecords;
+use Wotz\FilamentMailTemplates\Filament\Resources\MailHistoryResource;
 
 class ListMailHistories extends ListRecords
 {

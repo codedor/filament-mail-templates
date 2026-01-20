@@ -2,10 +2,10 @@
 
 namespace Wotz\FilamentMailTemplates\Filament;
 
-use Wotz\FilamentMailTemplates\Filament\Resources\MailHistoryResource;
-use Wotz\FilamentMailTemplates\Filament\Resources\MailTemplateResource;
 use Filament\Contracts\Plugin;
 use Filament\Panel;
+use Wotz\FilamentMailTemplates\Filament\Resources\MailHistoryResource;
+use Wotz\FilamentMailTemplates\Filament\Resources\MailTemplateResource;
 
 class MailTemplatePlugin implements Plugin
 {

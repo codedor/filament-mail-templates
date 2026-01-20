@@ -2,9 +2,9 @@
 
 namespace Wotz\FilamentMailTemplates\Tests;
 
-use Wotz\FilamentMailTemplates\Providers\FilamentMailTemplatesServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
+use Wotz\FilamentMailTemplates\Providers\FilamentMailTemplatesServiceProvider;
 
 class TestCase extends Orchestra
 {

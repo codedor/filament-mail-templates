@@ -2,12 +2,12 @@
 
 namespace Wotz\FilamentMailTemplates\Models;
 
-use Wotz\FilamentMailTemplates\Facades\MailTemplateCollection;
-use Wotz\FilamentMailTemplates\Facades\MailTemplateFallbacks;
-use Wotz\FilamentMailTemplates\MailTemplateBuilder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Spatie\Translatable\HasTranslations;
+use Wotz\FilamentMailTemplates\Facades\MailTemplateCollection;
+use Wotz\FilamentMailTemplates\Facades\MailTemplateFallbacks;
+use Wotz\FilamentMailTemplates\MailTemplateBuilder;
 
 /**
  * @property string $identifier
